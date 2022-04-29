@@ -47,15 +47,15 @@
 
 ### **Summary**
 
-Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
+Heaven't is a Hack and Slash dungeon crawler that focuses on player interaction by allowing it's users to create their own levels!
 
 ### **Gameplay**
 
-What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
+Gameplay itself is failry straight forward. The main goal of the game is to beat a level by killing a boss monster, in what ways the player achieves this is up to them! The gameplay flow revolves around exploring a level or dungeon and defeating hordes of monsters that may drop powerful spells and items that may help the player on their run.
 
 ### **Mindset**
 
-What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
+The feeling that we want to transmit to our players is that of extreme power but also an proportionate challenge. The amount of tools on the player's kit can get very wide and at times seem overpowered; however, we believe all of these tools are necessary if they are to tackle difficult challenges that are created by players themselves!
 
 ## _Technical_
 
