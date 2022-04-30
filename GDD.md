@@ -64,22 +64,27 @@ The feeling that we want to transmit to our players is that of extreme power but
 ### **Screens**
 
 1. Title Screen
-    1. Options
-2. Level Select
-3. Game
-    1. Inventory
-    2. Assessment / Next Level
-4. End Credits
+    1. Play
+    2. Build Level
+    3. Check Stats
+2. Play
+3. Build Level
+4. Check Stats
+5. Game
+6. End Credits
 
-_(example)_
 
 ### **Controls**
 
 How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
 
+The controls are fairly simple: one button for equiped melee weapon, one for equiped spell and one for the dodge. Apart from that there will be one buttton for interaction with which the player can pick up items and open doors. The last buttons will allow the player to switch between the 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
+
 ### **Mechanics**
 
-Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
+One of the most interesting mechanics our game has is the stagger mechanic. Whith this, the player will be able to breathe when being chased by dozens of enemies on a single screen. The main idea is that when an enemy is attacked with a melle weapon, they are pushed back to a certain degree depending on the level of stagger that set weapon has. 
+
+Because it is a hack and slash, we would hate for players to feel slow or stuck. As such, we decided to add a dash mechanic with which they will be able to phase through hordes of enemies and avoid getting hit. This dash mechanic has a cooldown, but it can get refreshed if the player hits an enemy with a melee weapon a short moment after doing the dash (consider that this effect can only be triggered once).
 
 ## _Level Design_
 
