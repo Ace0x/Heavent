@@ -79,15 +79,11 @@ The feeling that we want our players to experience is that of a power-high, but 
 
 ### **Controls**
 
-How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
-
 The controls are fairly simple: one button to use the equiped melee weapon, another for the equiped spell, and yet another one for their dodge. Aside from those, the player will have one buttton for interaction, with which the player can pick up items and open doors. The last few buttons will allow the player to switch between their 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
 
 ### **Mechanics**
 
 _Level Creation_ is the main focus of the game. Due to this, we've decided to streamline the process the player will go through in order to make one, which means that the approach we've taken relies on a grid and preset tiles and entities. However, this does not mean that they're limited in what they can do, as players will not only be capable of placing tiles to make their rooms and entities to fill them, but they will be able to modify certain values in the entities that they add. They can change the attack speed and damage on weapons, so as to make an ultra greatsword that swings as fast as a foam sword, but also hits like one; or they may modify movement speed and health on enemies, so they can make other players experience the terror of having a boss-monster running towards them at the speed of sound while it being nigh unkillable.
-
-_Game Over_ can be achieved in one of two ways: you either lose all your health points (HP) and fail, or you defeat all bosses in the level and win. Whatever may be in the middle is of little importance, as it only functions to give players the challenge of a full dungeon-esque structure, or to build them up to the task of defeating the bosses via weaponry.
 
 Since enemy encounters in the game are primarily comprised of swarms or large groups of them, their _behaviour_ prioritizes following the player and attacking them when they are in range. Melee-type enemies and bosses will aim to get close to the player and attack them, doing so until either the player or the enemy in question has died. Enemies with ranged attacks will follow a similar pattern, however they will prefer to remain at a medium-to-long range from the player in order to hit them. 
 
@@ -95,7 +91,9 @@ One of the most interesting and important mechanics within our game is _stagger_
 
 Since it is a _Hack and Slash_, we would hate for players to feel either slow or stuck, so we also decided to add a _dash_ mechanic with which they will be able to accelerate once in a given direction. This will alow players to quickly pass through enemy hordes as well as being invulnerable to damage for a brief period of time. This dash mechanic does have a short cooldown after its use, in order to incentivize players to use it as effectively as possible, but it can be completely recharged if the player hits an enemy with a melee weapon after doing the dash. This last characteristic makes recharging one's dash into a risk-reward scenario, as having your dash up allows you to avoid enemies when necessary and it makes combat fast-paced, however doing so makes you vulnerable to being hit.
 
-Another important mechanic within the game is _health_. Health points (HP) determine the player's capability to be alive, since if they reach 0 they will immediately lose the level. These are lost when the player gets hit by enemies, but can be regained with _healing_ in the form of health drops from enemies.
+Another important mechanic within the game is _health_. Health Points (HP) are the metric by which we determine the player's capability to take damage, since if they reach 0 they will immediately lose the level. These points are lost when the player gets hit by enemies, but can be regained with _healing_ in the form of health drops from enemies.
+
+_Game Over_ can be achieved in one of two ways: you either lose all your HP and fail, or you defeat all bosses in the level and win. Whatever may be in the middle is completely up to the creator, as it functions to give players the challenge of a full dungeon-esque structure, or to build them up to the task of defeating the bosses via weaponry.
 
 Lastly, spells are this game's form of projectile weaponry. It is to be noted that they do require ammunition in the form of _Faith_, a meter, similar to the HP one, that determines how many times spells can be fired before needing to recharge. Some spells require more Faith Points (FP) to use than others, so one's FP will be drained quickly when using them. FP is recovered in only one way: by striking enemies with melee weapons, which requires the player to get close to the enemies and risk getting hit.
 
@@ -103,34 +101,33 @@ Lastly, spells are this game's form of projectile weaponry. It is to be noted th
 
 ---
 
-_(Note : These sections can safely be skipped if they&#39;re not relevant, or you&#39;d rather go about it another way. For most games, at least one of them should be useful. But I&#39;ll understand if you don&#39;t want to use them. It&#39;ll only hurt my feelings a little bit.)_
-
 ### **Themes**
 
-1. Forest
+1. Heaven
     1. Mood
-        1. Dark, calm, foreboding
+        1. Bright, soothing yet intense, divine
     2. Objects
         1. _Ambient_
-            1. Fireflies
-            2. Beams of moonlight
-            3. Tall grass
+            1. Clouds
+            2. Rays of sunlight
+            3. Doves
         2. _Interactive_
-            1. Wolves
-            2. Goblins
-            3. Rocks
-2. Castle
+            1. Weaponry
+            2. Spells
+            3. Drops
+
+2. Hell
     1. Mood
-        1. Dangerous, tense, active
+        1. Dark and red-ish hue, ominous, anxiety-inducing
     2. Objects
         1. _Ambient_
-            1. Rodents
-            2. Torches
-            3. Suits of armor
+            1. Smoke
+            2. Fire
+            3. Blood
         2. _Interactive_
-            1. Guards
-            2. Giant rats
-            3. Chests
+            1. Weaponry
+            2. Spells
+            3. Drops
 
 _(example)_
 
@@ -152,7 +149,7 @@ _(example)_
 1. Player starts within the designated starting point
 2. They fight across the level
 3. They may pick up weaponry and spells if there are any available
-4. They finish the level in one of two ways: they die an lose, or they kill all bosses and win.
+4. They finish the level in one of two ways: they deplete their HP and lose, or they kill all boss-type monsters and win.
 
 _(example)_
 
@@ -202,11 +199,13 @@ _(example)_
 
 ### **Style Attributes**
 
-What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
+The use of color will depend on the themes the player decides to put into their levels. We opted to go for more vibrant and ethereal colors for the Heaven theme, as to give it that bright and intense aura, using primarily blues, whites, and yellows; and for the Hell theme we opted for more opaque and dark colors, adhering to a more red, purple, and grey palette.
 
-What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
+We pondered what type of style we'd like to give the game, and felt at home with the idea of a pixel-based world. It made the theme of a not-so angelic Angel mesh with combat in a way that was remniscent of more iconic dungeon-crawlers and hack-and-slash games. It was also the most simple way to implement good looking graphics as well as a level of detail that felt appropriate with a 'build-a-game'-type game
 
-Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they&#39;re interacting with something? That they \*can\* interact with something?
+Since Heaven't is supposed to have fast-paced combat across most of a playthrough, indicators of damage and healing will be quick. Something akin to a red flash around the screen when sustaining damage, or a yellow or green border when picking up health, this alongside particle effects that activate when the corresponding event takes place: red droplets or a yellow aura around the player.
+
+Item and drop interaction will most likely happen once combat is over, as it is risky to stop and ponder if swapping an item is worth it when being chased by 15 enemies of varying speeds, sizes, and power. The indication will hover above the player's character whenever they are in range of a dropped weapon or spell, indicating the pickup button and the item on the ground.
 
 ### **Graphics Needed**
 
