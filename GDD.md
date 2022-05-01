@@ -5,9 +5,11 @@
 
 ---
 
-##### **Copyright notice / author information / boring legal stuff nobody likes**
+### Authors:
+##### Emiliano Cabrera Ruiz - A01025453<br>Andrew Dunkerley Vera - A01025076<br>Do Hyun Nam - A01025276<br>Diego Corrales Pinedo - A01781631<br><br>TC2005B - Group 500<br><br>April 4th, 2022
 
-##
+---
+
 ## _Index_
 
 ---
@@ -47,15 +49,15 @@
 
 ### **Summary**
 
-Heaven't is a Hack and Slash dungeon crawler that focuses on player interaction by allowing it's users to create their own levels!
+Heaven't is a _Hack and Slash_ dungeon crawler that focuses on player interaction by allowing it's users to create their own levels!
 
 ### **Gameplay**
 
-Gameplay itself is failry straight forward. The main goal of the game is to beat a level by killing a boss monster, in what ways the player achieves this is up to them! The gameplay flow revolves around exploring a level or dungeon and defeating hordes of monsters that may drop powerful spells and items that may help the player on their run.
+The gameplay itself is quite simple. The main goal of the game is to beat a level by killing a boss monster, in what ways the player achieves this is up to them! The gameplay flow revolves around exploring a level or dungeon and defeating hordes of monsters that may drop powerful spells and items that can help the player on their run.
 
 ### **Mindset**
 
-The feeling that we want to transmit to our players is that of extreme power but also an proportionate challenge. The amount of tools on the player's kit can get very wide and at times seem overpowered; however, we believe all of these tools are necessary if they are to tackle difficult challenges that are created by players themselves!
+The feeling that we want our players to experience is that of a power-high, but we also wish to challenge their skills with said power. The amount of tools on the player's kit can become very wide and at times it may seem overpowered; however, we believe all of these tools are necessary if they are to tackle difficult challenges that are created by players, be it themselves or others!
 
 ## _Technical_
 
@@ -68,23 +70,34 @@ The feeling that we want to transmit to our players is that of extreme power but
     2. Build Level
     3. Check Stats
 2. Play
-3. Build Level
-4. Check Stats
-5. Game
-6. End Credits
+3. Choose level
+4. Build Level
+5. Check Stats
+6. Game
+7. End Credits
 
 
 ### **Controls**
 
 How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
 
-The controls are fairly simple: one button for equiped melee weapon, one for equiped spell and one for the dodge. Apart from that there will be one buttton for interaction with which the player can pick up items and open doors. The last buttons will allow the player to switch between the 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
+The controls are fairly simple: one button to use the equiped melee weapon, another for the equiped spell, and yet another one for their dodge. Aside from those, the player will have one buttton for interaction, with which the player can pick up items and open doors. The last few buttons will allow the player to switch between their 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
 
 ### **Mechanics**
 
-One of the most interesting mechanics our game has is the stagger mechanic. Whith this, the player will be able to breathe when being chased by dozens of enemies on a single screen. The main idea is that when an enemy is attacked with a melle weapon, they are pushed back to a certain degree depending on the level of stagger that set weapon has. 
+_Level Creation_ is the main focus of the game. Due to this, we've decided to streamline the process the player will go through in order to make one, which means that the approach we've taken relies on a grid and preset tiles and entities. However, this does not mean that they're limited in what they can do, as players will not only be capable of placing tiles to make their rooms and entities to fill them, but they will be able to modify certain values in the entities that they add. They can change the attack speed and damage on weapons, so as to make an ultra greatsword that swings as fast as a foam sword, but also hits like one; or they may modify movement speed and health on enemies, so they can make other players experience the terror of having a boss-monster running towards them at the speed of sound while it being nigh unkillable.
 
-Because it is a hack and slash, we would hate for players to feel slow or stuck. As such, we decided to add a dash mechanic with which they will be able to phase through hordes of enemies and avoid getting hit. This dash mechanic has a cooldown, but it can get refreshed if the player hits an enemy with a melee weapon a short moment after doing the dash (consider that this effect can only be triggered once).
+_Game Over_ can be achieved in one of two ways: you either lose all your health points (HP) and fail, or you defeat all bosses in the level and win. Whatever may be in the middle is of little importance, as it only functions to give players the challenge of a full dungeon-esque structure, or to build them up to the task of defeating the bosses via weaponry.
+
+Since enemy encounters in the game are primarily comprised of swarms or large groups of them, their _behaviour_ prioritizes following the player and attacking them when they are in range. Melee-type enemies and bosses will aim to get close to the player and attack them, doing so until either the player or the enemy in question has died. Enemies with ranged attacks will follow a similar pattern, however they will prefer to remain at a medium-to-long range from the player in order to hit them. 
+
+One of the most interesting and important mechanics within our game is _stagger_. It functions as both a knockback and stun mechanic with which the player will be able to create some breathing room when being swarmed by dozens of enemies on a single screen. The main idea is that when an enemy is attacked with a melee weapon they are pushed away from the player and their ongoing attacks are interrupted, and its effectiveness is dependent on the weapon and the enemy types, as certain weaponry hits 'harder' than others, such as a mace, and some enemies get staggered less in order to make them a more prevalent threat. 
+
+Since it is a _Hack and Slash_, we would hate for players to feel either slow or stuck, so we also decided to add a _dash_ mechanic with which they will be able to accelerate once in a given direction. This will alow players to quickly pass through enemy hordes as well as being invulnerable to damage for a brief period of time. This dash mechanic does have a short cooldown after its use, in order to incentivize players to use it as effectively as possible, but it can be completely recharged if the player hits an enemy with a melee weapon after doing the dash. This last characteristic makes recharging one's dash into a risk-reward scenario, as having your dash up allows you to avoid enemies when necessary and it makes combat fast-paced, however doing so makes you vulnerable to being hit.
+
+Another important mechanic within the game is _health_. Health points (HP) determine the player's capability to be alive, since if they reach 0 they will immediately lose the level. These are lost when the player gets hit by enemies, but can be regained with _healing_ in the form of health drops from enemies.
+
+Lastly, spells are this game's form of projectile weaponry. It is to be noted that they do require ammunition in the form of _Faith_, a meter, similar to the HP one, that determines how many times spells can be fired before needing to recharge. Some spells require more Faith Points (FP) to use than others, so one's FP will be drained quickly when using them. FP is recovered in only one way: by striking enemies with melee weapons, which requires the player to get close to the enemies and risk getting hit.
 
 ## _Level Design_
 
@@ -123,13 +136,23 @@ _(example)_
 
 ### **Game Flow**
 
-1. Player starts in forest
-2. Pond to the left, must move right
-3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
-4. Player encounters castle - door&#39;s shut and locked
-5. There&#39;s a window within jump height, and a rock on the ground
-6. Player picks up rock and throws at glass (&quot;throw&quot; taught)
-7. … etc.
+#### Level Creation
+
+1. Player enters a blank level, the only thing present are the tile and entity menus, as well as the background and a small platform that has the _starting point_ on it
+2. They can choose and place tiles and entities to their liking
+3. They can modifiy values on entities to their liking
+4. They can play the level at any point in order to verify it works as they want, there **must** be a starting point present in order for them to play it
+5. They finish building the level and can decide to either just save it or to upload it as well
+6. If they decide to upload it, they must play the level and pass it in order for it to be greenlit
+
+_(example)_
+
+#### Playing a level
+
+1. Player starts within the designated starting point
+2. They fight across the level
+3. They may pick up weaponry and spells if there are any available
+4. They finish the level in one of two ways: they die an lose, or they kill all bosses and win.
 
 _(example)_
 
