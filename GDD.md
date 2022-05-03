@@ -48,7 +48,7 @@
 
 ### **Summary**
 
-Heaven't is a _Hack and Slash_ dungeon crawler that focuses on player interaction by allowing it's users to create their own levels!
+***Heaven't*** is a _Hack and Slash_ dungeon crawler that focuses on player interaction by allowing it's users to create their own levels!
 
 ### **Gameplay**
 
@@ -202,7 +202,7 @@ The use of color will depend on the themes the player decides to put into their 
 
 We pondered what type of style we'd like to give the game, and felt at home with the idea of a pixel-based world. It made the theme of a not-so angelic Angel mesh with combat in a way that was remniscent of more iconic dungeon-crawlers and hack-and-slash games. It was also the most simple way to implement good looking graphics as well as a level of detail that felt appropriate with a 'build-a-game'-type game
 
-Since Heaven't is supposed to have fast-paced combat across most of a playthrough, indicators of damage and healing will be quick. Something akin to a red flash around the screen when sustaining damage, or a yellow or green border when picking up health, this alongside particle effects that activate when the corresponding event takes place: red droplets or a yellow aura around the player.
+Since ***Heaven't*** is supposed to have fast-paced combat across most of a playthrough, indicators of damage and healing will be quick. Something akin to a red flash around the screen when sustaining damage, or a yellow or green border when picking up health, this alongside particle effects that activate when the corresponding event takes place: red droplets or a yellow aura around the player.
 
 Item and drop interaction will most likely happen once combat is over, as it is risky to stop and ponder if swapping an item is worth it when being chased by 15 enemies of varying speeds, sizes, and power. The indication will hover above the player's character whenever they are in range of a dropped weapon or spell, indicating the pickup button and the item on the ground.
 
