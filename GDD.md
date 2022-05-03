@@ -14,33 +14,35 @@
 
 ---
 
-1. [Index](#index)
-2. [Game Design](#game-design)
-    1. [Summary](#summary)
-    2. [Gameplay](#gameplay)
-    3. [Mindset](#mindset)
-3. [Technical](#technical)
-    1. [Screens](#screens)
-    2. [Controls](#controls)
-    3. [Mechanics](#mechanics)
-4. [Level Design](#level-design)
-    1. [Themes](#themes)
-        1. Ambience
-        2. Objects
-            1. Ambient
-            2. Interactive
-    2. [Game Flow](#game-flow)
-5. [Development](#development)
-    1. [Abstract Classes](#abstract-classes--components)
-    2. [Derived Classes](#derived-classes--component-compositions)
-6. [Graphics](#graphics)
-    1. [Style Attributes](#style-attributes)
-    2. [Graphics Needed](#graphics-needed)
-7. [Sounds/Music](#soundsmusic)
-    1. [Style Attributes](#style-attributes-1)
-    2. [Sounds Needed](#sounds-needed)
-    3. [Music Needed](#music-needed)
-8. [Schedule](#schedule)
+- [**Heaven't**](#heavent)
+  - [_Game Design Document_](#game-design-document)
+    - [Authors:](#authors)
+        - [Emiliano Cabrera Ruiz - A01025453<br>Andrew Dunkerley Vera - A01025076<br>Do Hyun Nam - A01025276<br>Diego Corrales Pinedo - A01781631<br><br>TC2005B - Group 500<br><br>April 4th, 2022](#emiliano-cabrera-ruiz---a01025453andrew-dunkerley-vera---a01025076do-hyun-nam---a01025276diego-corrales-pinedo---a01781631tc2005b---group-500april-4th-2022)
+  - [_Index_](#index)
+  - [_Game Design_](#game-design)
+    - [**Summary**](#summary)
+    - [**Gameplay**](#gameplay)
+    - [**Mindset**](#mindset)
+  - [_Technical_](#technical)
+    - [**Screens**](#screens)
+    - [**Controls**](#controls)
+    - [**Mechanics**](#mechanics)
+  - [_Level Design_](#level-design)
+    - [**Themes**](#themes)
+    - [**Game Flow**](#game-flow)
+      - [Level Creation](#level-creation)
+      - [Playing a level](#playing-a-level)
+  - [_Development_](#development)
+    - [**Abstract Classes / Components**](#abstract-classes--components)
+    - [**Derived Classes / Component Compositions**](#derived-classes--component-compositions)
+  - [_Graphics_](#graphics)
+    - [**Style Attributes**](#style-attributes)
+    - [**Graphics Needed**](#graphics-needed)
+  - [_Sounds/Music_](#soundsmusic)
+    - [**Style Attributes**](#style-attributes-1)
+    - [**Sounds Needed**](#sounds-needed)
+    - [**Music Needed**](#music-needed)
+  - [_Schedule_](#schedule)
 
 ## _Game Design_
 
@@ -117,7 +119,7 @@ Lastly, spells are this game's form of projectile weaponry. It is to be noted th
 
 2. Hell
     1. Mood
-        1. Dark and red-ish hue, ominous, anxiety-inducing
+        1. Dark and red-ish in hue, ominous, anxiety-inducing
     2. Objects
         1. _Ambient_
             1. Smoke
@@ -127,6 +129,19 @@ Lastly, spells are this game's form of projectile weaponry. It is to be noted th
             1. Weaponry
             2. Spells
             3. Drops
+
+3. Purgatory
+   1. Mood
+      1. Silent, void, unsettling
+   2. Objects
+      1. _Ambient_
+         1. Static
+         2. Blue flames
+         3. Mist
+      2. _Interactive_
+         1. Weaponry
+         2. Spells
+         3. Drops
 
 _(example)_
 
@@ -209,33 +224,57 @@ Item and drop interaction will most likely happen once combat is over, as it is 
 ### **Graphics Needed**
 
 1. Characters
-    1. Human-like
-        1. Goblin (idle, walking, throwing)
-        2. Guard (idle, walking, stabbing)
-        3. Prisoner (walking, running)
-    2. Other
-        1. Wolf (idle, walking, running)
-        2. Giant Rat (idle, scurrying)
+    1. Protagonist (idle, walking, melee, spell-casting)
+    2. Enemies
+       1. Normal
+           1. Angel (idle, walking, melee, stagger)
+           2. Demon (idle, walking, melee, stagger)
+           3. Specters (idle, walking, shooting, stagger)
+        1. Boss
+           1. Biblically-accurate Angel (idle, walking, melee, shooting)
 2. Blocks
-    1. Dirt
-    2. Dirt/Grass
-    3. Stone Block
-    4. Stone Bricks
-    5. Tiled Floor
-    6. Weathered Stone Block
-    7. Weathered Stone Bricks
+    1. Heaven Floor
+    2. Hell Floor
+    3. Purgatory Floor
+    4. Heaven Wall
+    5. Hell Wall
+    6. Purgatory Wall
+    7. Door
 3. Ambient
-    1. Tall Grass
-    2. Rodent (idle, scurrying)
-    3. Torch
-    4. Armored Suit
-    5. Chains (matching Weathered Stone Bricks)
-    6. Blood stains (matching Weathered Stone Bricks)
+    1. Blood
+    2. Doves
+    3. Ghosts
+    4. Drops
+       1. Weapons
+          1. Sword
+          2. Greatsword
+          3. Spear
+          4. Mace
+          5. Dagger
+          6. Whip
+       2. Spells
+          1. Fire
+          2. Ice
+          3. Lightning
+          4. Greater Fire
+          5. Greater Ice
+          6. Greater Lightning
 4. Other
-    1. Chest
-    2. Door (matching Stone Bricks)
-    3. Gate
-    4. Button (matching Weathered Stone Bricks)
+    1. Health Drop
+    2. Weapons
+       1. Sword (idle, attacking)
+       2. Greatsword (idle, attacking)
+       3. Spear (idle, attacking)
+       4. Mace (idle, attacking)
+       5. Dagger (idle, attacking)
+       6. Whip (idle, attacking)
+    3. Spells
+       1. Fire (idle, casting, shooting)
+       2. Ice (idle, casting, shooting)
+       3. Lightning (idle, casting, shooting)
+       4. Greater Fire (idle, casting, shooting)
+       5. Greater Ice (idle, casting, shooting)
+       6. Greater Lightning (idle, casting, shooting)
 
 _(example)_
 
