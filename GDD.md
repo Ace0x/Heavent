@@ -332,7 +332,9 @@ _(example)_
 4. Happy ending credits track
 5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
 
-_(example)_
+[Intro Music](./assets/dd.mp3)
+[Gameplay music](./assets/lo8b.mp3)
+
 
 
 ## _Schedule_
