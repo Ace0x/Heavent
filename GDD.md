@@ -54,7 +54,7 @@
 
 ### **Gameplay**
 
-The gameplay itself is quite simple. The main goal of the game is to beat a level by killing a boss monster, in what ways the player achieves this is up to them! The gameplay flow revolves around exploring a level or dungeon and defeating hordes of monsters that may drop powerful spells and items that can help the player on their run.
+The gameplay itself is quite simple. The main goal of the game is to beat a level by killing all boss-type monsters within it, all the while exploring the level and fighting hordes of smaller, but still deadly, enemies! The player may encounter several items such as weapons, spells, and health to aid them on their mission to exterminate bosses, however it is entirely up to them to decide whether they'd like to use them or not. Whatever they may choose, it will be a testament of their capability to juggle large hordes of enemies and high-speed movement and combat. 
 
 ### **Mindset**
 
