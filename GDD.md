@@ -160,7 +160,8 @@ _(example)_
 5. They finish building the level and can decide to either just save it or to upload it as well
 6. If they decide to upload it, they must play the level and pass it in order for it to be greenlit
 
-_(example)_
+!["Super dungeon maker"](./assets/sdm.jpeg)
+Super Dungeon Maker, available on Steam
 
 #### Playing a level
 
@@ -198,6 +199,7 @@ _(example)_
     4. BossMob
 3. BaseCollider
     1. WallCollider (sprites depend on decorators)
+    2. DoorCollider (opens and closes)
 4. BaseCollectible
     1. CoinCollectible
     2. LifeCollectible
@@ -209,6 +211,7 @@ _(example)_
     1. Blood
     2. Pigeons
     3. Ghosts
+    4. Pilars
 
 _(example)_
 
