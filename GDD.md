@@ -147,7 +147,10 @@ Lastly, spells are this game's form of projectile weaponry. It is to be noted th
          2. Spells
          3. Drops
 
-_(example)_
+![Hollow Knight](./assets/hk.jpeg)
+The ethereal and somber atmosphere
+![Dead+Cells](./assets/dc.jpeg)
+The strikingly vibrant contrast and colors
 
 ### **Game Flow**
 
@@ -284,7 +287,11 @@ Item and drop interaction will most likely happen once combat is over, as it is 
        5. Greater Ice (idle, casting, shooting)
        6. Greater Lightning (idle, casting, shooting)
 
-_(example)_
+![Hyrule Warriors](./assets/hw.jpeg)
+Hyrule Warriors
+
+![Bayonetta](./assets/by.jpeg)
+Bayonetta
 
 
 ## _Sounds/Music_
