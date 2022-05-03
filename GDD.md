@@ -172,23 +172,24 @@ _(example)_
 1. BasePlayer
     1. PlayerMain
     2. PlayerUnlockable
-2. BaseEnemy
-    1. EnemyWolf
-    2. EnemyGoblin
-    3. EnemyGuard (may drop key)
-    4. EnemyGiantRat
-    5. EnemyPrisoner
-3. BaseObject
-    1. ObjectRock (pick-up-able, throwable)
-    2. ObjectChest (pick-up-able, throwable, spits gold coins with key)
-    3. ObjectGoldCoin (cha-ching!)
-    4. ObjectKey (pick-up-able, throwable)
-4. BaseObstacle
-    1. ObstacleWindow (destroyed with rock)
-    2. ObstacleWall
-    3. ObstacleGate (watches to see if certain buttons are pressed)
-5. BaseInteractable
-    1. InteractableButton
+2. BaseMob
+    1. NormalMob
+    2. RangedMob
+    3. NoStagMob (doesn't have knockback)
+    4. BossMob
+3. BaseCollider
+    1. WallCollider (sprites depend on decorators)
+4. BaseCollectible
+    1. CoinCollectible
+    2. LifeCollectible
+5. BaseEventActivator
+    1. Spawner
+    2. StartingPoint
+    3. HeavensGate
+6. Decorators (do not have a functional role)
+    1. Blood
+    2. Pigeons
+    3. Ghosts
 
 _(example)_
 
