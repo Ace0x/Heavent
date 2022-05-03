@@ -77,10 +77,14 @@ The feeling that we want our players to experience is that of a power-high, but 
 6. Game
 7. End Credits
 
+![Title screen](./assets/menu.png)
+
 
 ### **Controls**
 
 The controls are fairly simple: one button to use the equiped melee weapon, another for the equiped spell, and yet another one for their dodge. Aside from those, the player will have one buttton for interaction, with which the player can pick up items and open doors. The last few buttons will allow the player to switch between their 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
+
+![Keyboard layout](./assets/keyboard.png)
 
 ### **Mechanics**
 
