@@ -54,7 +54,7 @@
 
 ### **Gameplay**
 
-The gameplay itself is quite simple. The main goal of the game is to beat a level by killing all boss-type monsters within it, all the while exploring the level and fighting hordes of smaller, but still deadly, enemies! The player may encounter several items such as weapons, spells, and health to aid them on their mission to exterminate bosses, however it is entirely up to them to decide whether they'd like to use them or not. Whatever they may choose, it will be a testament of their capability to juggle large hordes of enemies and high-speed movement and combat. 
+The gameplay itself is quite simple. The main goal of the game is to beat a level by killing all boss-type monsters within it, all the while exploring the level and fighting hordes of smaller, but still deadly, enemies! The player may encounter several items such as weapons, spells, and health to aid them on their mission to exterminate bosses, however, it is entirely up to them to decide whether they'd like to use them or not. Whatever they may choose, it will be a testament of their capability to juggle large hordes of enemies and high-speed movement and combat. 
 
 ### **Mindset**
 
@@ -82,7 +82,7 @@ The feeling that we want our players to experience is that of a power-high, but 
 
 ### **Controls**
 
-The controls are fairly simple: one button to use the equiped melee weapon, another for the equiped spell, and yet another one for their dodge. Aside from those, the player will have one buttton for interaction, with which the player can pick up items and open doors. The last few buttons will allow the player to switch between their 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
+The controls are fairly simple: one button to use the equiped melee weapon, another for the equiped spell, these will be bound to 'O' and 'P', respectively and we'll bind the dash to the spacebar. Aside from those, the player will have one button for interaction, 'E', with which the player can pick up items and open doors. The last few buttons will allow the player to switch between their 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
 
 ![Keyboard layout](./assets/keyboard.png)
 
@@ -101,6 +101,26 @@ Another important mechanic within the game is _health_. Health Points (HP) are t
 _Game Over_ can be achieved in one of two ways: you either lose all your HP and fail, or you defeat all bosses in the level and win. Whatever may be in the middle is completely up to the creator, as it functions to give players the challenge of a full dungeon-esque structure, or to build them up to the task of defeating the bosses via weaponry.
 
 Lastly, spells are this game's form of projectile weaponry. It is to be noted that they do require ammunition in the form of _Faith_, a meter, similar to the HP one, that determines how many times spells can be fired before needing to recharge. Some spells require more Faith Points (FP) to use than others, so one's FP will be drained quickly when using them. FP is recovered in only one way: by striking enemies with melee weapons, which requires the player to get close to the enemies and risk getting hit.
+
+As mentioned across several of the mechanics, _variable customization_ will be possible for all entities' in the game. A player will be able to place entities; the term 'entities' refers to enemies, weapons, spells, and spawners; which they will be able to modify to a certain degree. This is to say that certain attributes wil be modifiable. 
+Enemies and spawners will have the following modifiable attributes:
+1. Health
+2. Movement speed
+3. Damage
+4. Stagger multiplier
+<br>All enemies spawned by a spawner will have the selected modified attributes.
+
+Weapons will have the following modifiable attributes:
+1. Damage
+2. Attack speed
+3. Size
+4. Stagger multiplier
+5. FP return
+
+Spells wil have the following modifiable attributes:
+1. Damage
+2. Casting speed
+3. FP cost
 
 ## _Level Design_
 
