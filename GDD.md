@@ -322,9 +322,9 @@ Bayonetta
 
 For ***Heavent's*** music, the main characteristic we're looking for is that it's 8-bit style. As for specifics, it depends on what area the track is for: Heaven needs to be divine and pure so music that feels ethereal with an abundance of soft notes would be ideal, something akin to classical. Hell is much more dark and grimy, so overwhelming tunes, such as rock or metal would be good. Purgatory is based around suspensefeul terror and an unsettling atmosphere, so instead of utilizing music per-se, we thought that arranging a combination of sounds to induce a state of fight-ot-flight would be fitting. For this last point we took heavy inspiration from EAS alarms.
 
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
+Sound effects are very important in order to bring out the game's nature. Fast-paced combat would need sound effects to be concise but evident, that is to say, no constant beeping or loud distraction. Most sounds would depend on enemy type both to make it varied and to: angels would play light sounds alongside a dust-like effect. Demons would perhaps be more dry sounds with some fleshy after effects. Specters would be an almost inaudible wind blowing, as if to simulate their incorporeal nature.
 
- Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
+Weapon swings also require their own sounds, since several weapons simulate different types of metallic movement, these being cutting, thrusting, or simply flat impact. Spells are in the same boat, but these can be effects of fire, ice, and lightning for the normal spells and bass-boosted versions for their greater versions.
 
 ### **Sounds Needed**
 
