@@ -320,7 +320,7 @@ Bayonetta
 
 ### **Style Attributes**
 
-Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+For ***Heavent's*** music, the main characteristic we're looking for is that it's 8-bit style. As for specifics, it depends on what area the track is for: Heaven needs to be divine and pure so music that feels ethereal with an abundance of soft notes would be ideal, something akin to classical. Hell is much more dark and grimy, so overwhelming tunes, such as rock or metal would be good. Purgatory is based around suspensefeul terror and an unsettling atmosphere, so instead of utilizing music per-se, we thought that arranging a combination of sounds to induce a state of fight-ot-flight would be fitting. For this last point we took heavy inspiration from EAS alarms.
 
 Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
 
