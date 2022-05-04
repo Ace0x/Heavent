@@ -193,8 +193,6 @@ Super Dungeon Maker, available on Steam
 3. They may pick up weaponry and spells if there are any available
 4. They finish the level in one of two ways: they deplete their HP and lose, or they kill all boss-type monsters and win.
 
-_(example)_
-
 ## _Development_
 
 ---
@@ -207,8 +205,6 @@ _(example)_
     3. BaseObject
 2. BaseObstacle
 3. BaseInteractable
-
-_(example)_
 
 ### **Derived Classes / Component Compositions**
 
@@ -235,8 +231,6 @@ _(example)_
     2. Pigeons
     3. Ghosts
     4. Pilars
-
-_(example)_
 
 ## _Graphics_
 
@@ -290,16 +284,16 @@ Item and drop interaction will most likely happen once combat is over, as it is 
           4. Greater Fire
           5. Greater Ice
           6. Greater Lightning
+       3. Health 
 4. Other
-    1. Health Drop
-    2. Weapons
+    1. Weapons
        1. Sword (idle, attacking)
        2. Greatsword (idle, attacking)
        3. Spear (idle, attacking)
        4. Mace (idle, attacking)
        5. Dagger (idle, attacking)
        6. Whip (idle, attacking)
-    3. Spells
+    2. Spells
        1. Fire (idle, casting, shooting)
        2. Ice (idle, casting, shooting)
        3. Lightning (idle, casting, shooting)
@@ -324,38 +318,63 @@ For ***Heavent's*** music, the main characteristic we're looking for is that it'
 
 Sound effects are very important in order to bring out the game's nature. Fast-paced combat would need sound effects to be concise but evident, that is to say, no constant beeping or loud distraction. Most sounds would depend on enemy type both to make it varied and to: angels would play light sounds alongside a dust-like effect. Demons would perhaps be more dry sounds with some fleshy after effects. Specters would be an almost inaudible wind blowing, as if to simulate their incorporeal nature.
 
-Weapon swings also require their own sounds, since several weapons simulate different types of metallic movement, these being cutting, thrusting, or simply flat impact. Spells are in the same boat, but these can be effects of fire, ice, and lightning for the normal spells and bass-boosted versions for their greater versions.
+Weapon swings also require their own sounds, since several weapons simulate different types of metallic movement, these being cutting, thrusting, or simply flat impact. Spells are in the same boat, but these can be effects of a crackling fire for fire spells, frosting water for ice spells, and thunder for lightning spells as well as bass-boosted versions for their greater versions.
 
 ### **Sounds Needed**
 
 1. Effects
-    1. Soft Footsteps (dirt floor)
-    2. Sharper Footsteps (stone floor)
-    3. Soft Landing (low vertical velocity)
-    4. Hard Landing (high vertical velocity)
-    5. Glass Breaking
-    6. Chest Opening
-    7. Door Opening
+    1. Angel footsteps 
+    2. Demon footsteps 
+    3. Spectre floating
+    4. Sword slashing
+    5. Mace impact
+    6. Spear thrusting
+    7. Fire spell
+    8. Ice spell
+    9. Lightning spell
+    10. Fire spell (Greater)
+    11. Ice spell (Greater)
+    12. Lightning spell (Greater)
+    13. Enemy projectile
+    14. Enemy melee
+    15. Boss footsteps
+    16. Dash
 2. Feedback
-    1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Shocked &quot;Ooomph!&quot; (attacked)
-    3. Happy chime (extra life)
-    4. Sad chime (died)
-
-_(example)_
+    1. Health pickup 
+    2. Player damaged
+    3. Faith recovery
+    4. Angel damaged
+    5. Demon damaged
+    6. Spectre damaged
+    7. Enemy defeated
+    8. Boss defeated
+    9. Death
+    10. Victory
+3. Building
+   1. Placing floor
+   2. Placing wall
+   3. Removing tile
+   4. Placing Angel
+   5. Placing Demon
+   6. Placing Spectre
+   7. Placing boss
+   8. Removing enemy
+   9. Placing Starting point
+   10. Play
+   11. Return to building
+   12. Save
+   13. Exit
 
 ### **Music Needed**
 
-1. Slow-paced, nerve-racking &quot;forest&quot; track
-2. Exciting &quot;castle&quot; track
-3. Creepy, slow &quot;dungeon&quot; track
-4. Happy ending credits track
-5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
+1. Menu music track
+2. Heaven theme track
+3. Hell theme track
+4. Purgatory theme track
+5. Builder theme
 
 [Intro Music](./assets/dd.mp3)
 [Gameplay music](./assets/lo8b.mp3)
-
-
 
 ## _Schedule_
 
