@@ -140,7 +140,6 @@ Spells wil have the following modifiable attributes:
             1. Weaponry
             2. Spells
             3. Drops
-
 2. Hell
     1. Mood
         1. Dark and red-ish in hue, ominous, anxiety-inducing
@@ -153,7 +152,6 @@ Spells wil have the following modifiable attributes:
             1. Weaponry
             2. Spells
             3. Drops
-
 3. Purgatory
    1. Mood
       1. Silent, void, unsettling
@@ -373,7 +371,7 @@ Weapon swings also require their own sounds, since several weapons simulate diff
 4. Purgatory theme track
 5. Builder theme
 
-[Intro Music](./assets/dd.mp3)
+[Intro Music](./assets/dd.mp3)<br>
 [Gameplay music](./assets/lo8b.mp3)
 
 ## _Schedule_
