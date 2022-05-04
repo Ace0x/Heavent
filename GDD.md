@@ -26,6 +26,8 @@
   - [_Technical_](#technical)
     - [**Screens**](#screens)
     - [**Controls**](#controls)
+        - [Creating a level](#creating-a-level)
+        - [Playing the game](#playing-the-game)
     - [**Mechanics**](#mechanics)
   - [_Level Design_](#level-design)
     - [**Themes**](#themes)
@@ -82,6 +84,10 @@ The feeling that we want our players to experience is that of a power-high, but 
 
 ### **Controls**
 
+##### Creating a level
+Controls for creating a level are simple as they only utilize the mouse in conjunction with the on-screen menus. Placing or selecting individual elements would be done with left-click, whereas selecting several of them would be done via dragging a selected area with right-click.
+
+##### Playing the game
 The controls are fairly simple: one button to use the equiped melee weapon, another for the equiped spell, these will be bound to 'O' and 'P', respectively and we'll bind the dash to the spacebar. Aside from those, the player will have one button for interaction, 'E', with which the player can pick up items and open doors. The last few buttons will allow the player to switch between their 8 posible slots of spells and items; these are going to be bound to the numbers on the keyboard. Movement will be done through the classic W-A-S-D input system.
 
 ![Keyboard layout](./assets/keyboard.png)
