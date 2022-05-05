@@ -386,32 +386,28 @@ Weapon swings also require their own sounds, since several weapons simulate diff
 
 _(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
 
-1. develop base classes
-    1. base entity
-        1. base player
-        2. base enemy
-        3. base block
-  2. base app state
-        1. game world
-        2. menu world
-2. develop player and basic block classes
-    1. physics / collisions
-3. find some smooth controls/physics
-4. develop other derived classes
-    1. blocks
-        1. moving
-        2. falling
-        3. breaking
-        4. cloud
-    2. enemies
-        1. soldier
-        2. rat
-        3. etc.
-5. design levels
-    1. introduce motion/jumping
-    2. introduce throwing
-    3. mind the pacing, let the player play between lessons
-6. design sounds
-7. design music
+1. Gameplan design: design a detailed mechanical and visual identity for the player and how it'll interact with the environment. -> *May 13, 2022*
+    - Design and plan environmental variables such as colliders, weapon power, mobs and other not-so-relevant variables.
+    - Consider different factors in the environment that may impact how the main player behaves. 
+    - This also includes how the level builder will interact with the end user to build their own level.
+
+2. Define assets: since the project will combine proprietary assets and open sourced ones, we shall have all design elements as files. -> *May 15, 2022*
+    - Explore and search the online world for assets that best suit our goals.
+    - Have sketches of the proprietary assets.
+
+3. Develop pseudocode for each gameobject: considering the gameobjects (see Components section) a pseudocode/description of what should an object perform during the game is to be elaborated. -> *May 19, 2022*
+
+4. Scripting of all Base Components: based on the pseudocode and descriptions, each object will be scripted accordingly. -> *May 26, 2022*
+    - Add animations to the game: for each component, if it has an animation relevant to the game, an animation controller will be attached to it.
+
+5. Building a playable base level: a playable level will be designed and implemented to test the functionalities that were implemented. -> *May 29, 2022*
+
+6. The level builder is integrated promptly into the game. -> *June 5th, 2022*
+    - This step includes the mechanics on how the level will be built by the end user.
+    - The stored level is then sent to the database, by a POST request to the API.
+    - The game accesses the stores level through a GET request.
+
+7. Main menu function added... 
+
 
 _(example)_
