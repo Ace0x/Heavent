@@ -384,8 +384,6 @@ Weapon swings also require their own sounds, since several weapons simulate diff
 
 ---
 
-_(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
-
 1. Gameplan design: design a detailed mechanical and visual identity for the player and how it'll interact with the environment. -> *May 13, 2022*
     - Design and plan environmental variables such as colliders, weapon power, mobs and other not-so-relevant variables.
     - Consider different factors in the environment that may impact how the main player behaves. 
@@ -410,4 +408,3 @@ _(define the main activities and the expected dates when they should be finished
 7. Main menu function added... 
 
 
-_(example)_
