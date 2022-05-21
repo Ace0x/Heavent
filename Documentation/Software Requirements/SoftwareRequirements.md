@@ -20,6 +20,8 @@ This can then become “As a user managing my properties, I want notifications w
 
 You can read about some reasons for this structure in this [nicely put article][1].
 
+As an association aiming to increase the educational value videogames may have in the current and future generations. We'd like a game that has includes a level builder so that people understand how videogames are built?
+
 ### Description
 
 We’re using the following template to create user stories. 
