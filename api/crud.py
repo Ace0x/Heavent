@@ -40,7 +40,10 @@ User requests
 def get_users(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.User).offset(skip).limit(limit).all()
 
-def add_user(db: Session, user: schemas.UserCreate):
+def get_user(db: Session, user_id: int):
+    return db.query(models.User).filter(models.User.id == user_id).first()
+
+def create_user(db: Session, user: schemas.UserCreate):
     db_user = models.User(**user.dict())
     db.add(db_user)
     db.commit()
@@ -54,7 +57,7 @@ Level requests
 def get_levels(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Level).offset(skip).limit(limit).all()
 
-def add_level(db: Session, level: schemas.LevelCreate):
+def create_level(db: Session, level: schemas.LevelCreate):
     db_level = models.Level(**level.dict())
     db.add(db_level)
     db.commit()
@@ -64,3 +67,12 @@ def add_level(db: Session, level: schemas.LevelCreate):
 """
 Level stats requests
 """
+def get_all_user_level_stats(db: Session, user_id: int, level_id: int):
+    return db.query(models.LevelStats).filter(models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).all()
+
+def create_level_stats(db: Session, level_stats: schemas.LevelStatsCreate):
+    db_level_stats = models.LevelStats(**level_stats.dict())
+    db.add(db_level_stats)
+    db.commit()
+    db.refresh(db_level_stats)
+    return db_level_stats
