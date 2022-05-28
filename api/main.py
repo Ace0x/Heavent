@@ -1,4 +1,3 @@
-from typing import List
 from fastapi import FastAPI, Depends, Request
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -44,8 +43,8 @@ templates = Jinja2Templates(directory="templates")
 """
 Default request
 """
-@app.get("/")
-def index(request: Request):
+@app.get("/", response_class=HTMLResponse)
+async def main(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 """
