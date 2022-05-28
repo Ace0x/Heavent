@@ -37,3 +37,22 @@ class LevelStatsCreate(BaseModel):
 
     class Config:
         orm_mode=True
+
+"""
+Schemas for user stats
+"""
+class UserStatsCreate(BaseModel):
+    id: Optional[int]
+    userId: int
+    played: int
+    victory: int
+
+    class Config:
+        orm_mode=True
+
+class UserStatsUpdate(BaseModel):
+    played: int
+    victory: int
+
+    class Config:
+        orm_mode=True

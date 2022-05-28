@@ -86,6 +86,26 @@ def get_all_user_level_stats(user_id: int, level_id: int, db: Session = Depends(
 def create_level_stats(level_stats: schemas.LevelStatsCreate, db: Session = Depends(get_db)):
     return crud.create_level_stats(db=db, level_stats=level_stats)
 
+"""
+User stats requests
+"""
+@app.get("/user_stats")
+def get_all_users_stats(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return crud.get_all_users_stats(db, skip=skip, limit=limit)
+
+@app.get("/user_stats/{user_id}")
+def get_user_stats(user_id: int, db: Session = Depends(get_db)):
+    return crud.get_user_stats(db=db, user_id=user_id)
+
+@app.post("/user_stats")
+def create_user_stats(user_stats: schemas.UserStatsCreate, db: Session = Depends(get_db)):
+    return crud.create_user_stats(db=db, user_stats=user_stats)
+
+@app.put("/user_stats/{user_id}")
+def update_user_stats(user_id: int, user_stats: schemas.UserStatsUpdate, db: Session = Depends(get_db)):
+    return crud.update_user_stats(db=db, user_id=user_id, user_stats=user_stats)
+
+
 
 
 

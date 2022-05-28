@@ -3,6 +3,7 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, JSON
 from sqlalchemy.orm import relationship
 from config import Base
 
+# User table
 class User(Base):
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, index=True)
@@ -11,7 +12,9 @@ class User(Base):
 
     level = relationship("Level", back_populates="user")
     levelstats = relationship("LevelStats", back_populates="user")
+    userstats = relationship("UserStats", back_populates="user")
 
+# Level table
 class Level(Base): 
     __tablename__ = "level"
     id = Column(Integer, primary_key=True, index=True)
@@ -22,6 +25,7 @@ class Level(Base):
     user = relationship("User", back_populates="level")
     levelstats = relationship("LevelStats", back_populates="level")
 
+# Level stats table
 class LevelStats(Base):
     __tablename__ = "levelstats"
     id = Column(Integer, primary_key=True, index=True)
@@ -32,3 +36,13 @@ class LevelStats(Base):
 
     user = relationship("User", back_populates="levelstats")
     level = relationship("Level", back_populates="levelstats")
+
+# User stats table
+class UserStats(Base):
+    __tablename__ = "userstats"
+    id = Column(Integer, primary_key=True, index=True)
+    userId = Column(Integer, ForeignKey("user.id"), nullable=False)
+    played = Column(Integer, nullable=False)
+    victory = Column(Integer, nullable=False)
+
+    user = relationship("User", back_populates="userstats")
