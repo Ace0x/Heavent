@@ -1,6 +1,11 @@
 import React from "react";
-import { FaBars, FaInstagram } from "react-icons/fa";
-import { AiOutlineLogin, AiOutlineLogout, AiOutlineUserAdd } from "react-icons/ai";
+import { FaBars } from "react-icons/fa";
+import {
+  AiOutlineLogin,
+  AiOutlineLogout,
+  AiOutlineUserAdd,
+  AiOutlineUser
+} from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
@@ -26,6 +31,29 @@ export default function Nav({ fixed }) {
         >
           <AiOutlineUserAdd className="text-lg leading-lg text-white opacity-75" />
           <span className="ml-2">Sign Up</span>
+        </NavLink>
+      </li>
+    </>
+  );
+
+  const UserSet = () => (
+    <>
+    <li className="nav-item">
+        <NavLink
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          to="/userdata"
+        >
+          <AiOutlineUser className="text-lg leading-lg text-white opacity-75" />
+          <span className="ml-2">User Data</span>
+        </NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          to="/"
+        >
+          <AiOutlineLogout className="text-lg leading-lg text-white opacity-75" />
+          <span className="ml-2">Log Out</span>
         </NavLink>
       </li>
     </>
@@ -58,23 +86,12 @@ export default function Nav({ fixed }) {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              {!currentUser ? (
-                <UserNotSet />
-              ) : (
-                <li className="nav-item">
-                  <NavLink
-                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                    to="/"
-                  >
-                    <AiOutlineLogout className="text-lg leading-lg text-white opacity-75" />
-                    <span className="ml-2">Log Out</span>
-                  </NavLink>
-                </li>
-              )}
+              {!currentUser ? <UserNotSet /> : <UserSet />}
             </ul>
           </div>
         </div>
       </nav>
+      <div className="mt-20"></div>
     </>
   );
 }
