@@ -67,6 +67,10 @@ def get_user_with_username_and_password(username: str, password: str, db: Sessio
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return crud.create_user(db=db, user=user)
 
+@app.delete("/users/{user_id}")
+def delete_user(user_id: int, db: Session = Depends(get_db)):
+    return crud.delete_user(db=db, user_id=user_id)
+
 """
 Level requests
 """

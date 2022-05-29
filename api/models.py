@@ -1,3 +1,4 @@
+from enum import unique
 from operator import index
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, JSON
 from sqlalchemy.orm import relationship
