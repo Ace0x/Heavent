@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBars, FaInstagram } from "react-icons/fa";
+import { AiOutlineLogin, AiOutlineLogout, AiOutlineUserAdd } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
@@ -14,6 +15,7 @@ export default function Nav({ fixed }) {
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
           to="/login"
         >
+          <AiOutlineLogin className="text-lg leading-lg text-white opacity-75" />
           <span className="ml-2">Log In</span>
         </NavLink>
       </li>
@@ -22,6 +24,7 @@ export default function Nav({ fixed }) {
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
           to="/signup"
         >
+          <AiOutlineUserAdd className="text-lg leading-lg text-white opacity-75" />
           <span className="ml-2">Sign Up</span>
         </NavLink>
       </li>
@@ -63,7 +66,7 @@ export default function Nav({ fixed }) {
                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     to="/"
                   >
-                    <FaInstagram className="text-lg leading-lg text-white opacity-75" />
+                    <AiOutlineLogout className="text-lg leading-lg text-white opacity-75" />
                     <span className="ml-2">Log Out</span>
                   </NavLink>
                 </li>

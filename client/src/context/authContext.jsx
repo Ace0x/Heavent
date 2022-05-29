@@ -8,6 +8,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+  const [authError, setAuthError] = useState();
 
   const URL = "http://localhost:8000/users/";
 
@@ -26,6 +27,7 @@ export function AuthProvider({ children }) {
       })
       .catch((error) => {
         console.error("Error:", error);
+        setAuthError(error);
       });
   };
 
@@ -47,6 +49,7 @@ export function AuthProvider({ children }) {
       })
       .catch((error) => {
         console.error("Error:", error);
+        setAuthError(error);
       });
   };
 
@@ -55,6 +58,7 @@ export function AuthProvider({ children }) {
     signup,
     logout,
     login,
+    authError
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
