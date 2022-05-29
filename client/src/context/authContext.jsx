@@ -12,32 +12,50 @@ export function AuthProvider({ children }) {
   const URL = "http://localhost:8000/users/";
 
   const signup = (username, password) => {
-      fetch(URL, {
-        method: 'POST', 
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({username, password}),
-      })
-      .then(response => response.json())
-      .then(data => {
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
         setCurrentUser(data);
-        console.log(currentUser)
+        console.log(currentUser);
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
       });
-    };
+  };
+
+  const logout = () => {
+    setCurrentUser(null);
+    window.location.reload();
+  };
+
+  const login = (username, password) => {
+    fetch(URL + username + "/" + password, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCurrentUser(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   const value = {
     currentUser,
     signup,
-
+    logout,
+    login,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

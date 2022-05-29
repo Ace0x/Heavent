@@ -14,7 +14,6 @@ export default function Header() {
       <div className="border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-4xl m-8">
         Play
       </div>
-      {currentUser && (currentUser.id)}
     </section>
   );
 }

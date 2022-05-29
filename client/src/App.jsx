@@ -1,8 +1,7 @@
-import { useState } from "react";
 import Nav from "./components/Navbar";
 import Header from "./sections/Header";
 import Info from "./sections/Info";
-import SignUp from "./sections/SignUp";
+import Auth from "./sections/Auth";
 import { AuthProvider } from "./context/authContext";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -10,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Nav />
         <Router>
+          <Nav />
           <Routes>
             <Route
               path="/"
@@ -22,7 +21,8 @@ function App() {
                 </>
               }
             />
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signup" element={<Auth authType="signup" />} />
+            <Route path="/login" element={<Auth authType="login" />} />
           </Routes>
         </Router>
       </AuthProvider>
