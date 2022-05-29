@@ -8,7 +8,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const { login, currentUser } = useAuth();
+  const { login, currentUser, authError } = useAuth();
 
   const onLoginClick = () => {
     console.log("login");
@@ -26,12 +26,13 @@ export default function Login() {
       <TextInput title="Username" setState={setUsername} type="text" />
       <TextInput title="Password" setState={setPassword} type="password" />
       <button
-        className="border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl m-2"
+        className="border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl m-2 hover:border-green-400 hover:text-green-400"
         onClick={() => onLoginClick()}
       >
         Log In
       </button>
       {error && <p className="text-red-500 my-4">{error}</p>}
+      {authError && <p className="text-red-500 my-4">{authError}</p>}
       {currentUser && <Navigate to="/"></Navigate>}
     </div>
   );
