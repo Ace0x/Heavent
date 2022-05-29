@@ -5,7 +5,7 @@ export default function Header() {
   const { currentUser } = useAuth();
 
   return (
-    <section id="header">
+    <section id="header" className="justify-center">
       <h1 className="title-text text-center text-8xl shadow-2xl">
         Hea<span style={{ fontSize: "12rem" }}>V</span>en't
       </h1>

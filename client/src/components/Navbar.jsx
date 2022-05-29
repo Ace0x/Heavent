@@ -4,14 +4,14 @@ import {
   AiOutlineLogin,
   AiOutlineLogout,
   AiOutlineUserAdd,
-  AiOutlineUser
+  AiOutlineUser,
 } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
 export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
 
   const UserNotSet = () => (
     <>
@@ -38,7 +38,7 @@ export default function Nav({ fixed }) {
 
   const UserSet = () => (
     <>
-    <li className="nav-item">
+      <li className="nav-item">
         <NavLink
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
           to="/userdata"
@@ -47,7 +47,7 @@ export default function Nav({ fixed }) {
           <span className="ml-2">User Data</span>
         </NavLink>
       </li>
-      <li className="nav-item">
+      <li className="nav-item" onClick={() => logout()}>
         <NavLink
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
           to="/"
