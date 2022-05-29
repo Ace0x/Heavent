@@ -1,8 +1,10 @@
 import React from "react";
 import { FaBars, FaInstagram } from "react-icons/fa";
+import { useAuth } from "../context/authContext";
 
 export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const { currentUser } = useAuth();
 
   return (
     <>
@@ -31,15 +33,28 @@ export default function Nav({ fixed }) {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" target={"blank"}
-                  href="https://www.instagram.com/rekenaar.csf/"
-                >
-                  <FaInstagram className="text-lg leading-lg text-white opacity-75" />
-                  <span className="ml-2">Follow us!</span>
-                </a>
-              </li>
+              {!currentUser ? (
+                <li className="nav-item">
+                  <a
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+
+                    href="/signup"
+                  >
+                    <FaInstagram className="text-lg leading-lg text-white opacity-75" />
+                    <span className="ml-2">Sign Up</span>
+                  </a>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <a
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="/"
+                  >
+                    <FaInstagram className="text-lg leading-lg text-white opacity-75" />
+                    <span className="ml-2">Log Out</span>
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

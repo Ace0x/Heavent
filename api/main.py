@@ -59,6 +59,10 @@ def get_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 def get_user(user_id: int, db: Session = Depends(get_db)):
     return crud.get_user(db, user_id=user_id)
 
+@app.get("/users/{username}/{password}")
+def get_user_with_username_and_password(username: str, password: str, db: Session = Depends(get_db)):
+    return crud.get_user_with_username_and_password(db, username=username, password=password)
+
 @app.post("/users")
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return crud.create_user(db=db, user=user)
