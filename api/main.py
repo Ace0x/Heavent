@@ -78,6 +78,10 @@ Level requests
 def get_levels(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return crud.get_levels(db, skip=skip, limit=limit)
 
+@app.get("/levels/users/{user_id}")
+def get_user_levels(user_id: int, db: Session = Depends(get_db)):
+    return crud.get_user_levels(db, user_id=user_id)
+
 @app.post("/levels")
 def create_level(level: schemas.LevelCreate, db: Session = Depends(get_db)):
     return crud.create_level(db=db, level=level)

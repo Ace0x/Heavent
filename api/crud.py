@@ -66,6 +66,9 @@ Level requests
 def get_levels(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Level).offset(skip).limit(limit).all()
 
+def get_user_levels(db: Session, user_id: int):
+    return db.query(models.Level).filter(models.Level.userId == user_id).all()
+
 def create_level(db: Session, level: schemas.LevelCreate):
     db_level = models.Level(**level.dict())
     db.add(db_level)

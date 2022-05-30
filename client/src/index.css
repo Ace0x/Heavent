@@ -31,7 +31,7 @@ body {
 }
 
 section {
-  @apply flex flex-col justify-start items-center min-h-screen text-white m-8
+  @apply flex flex-col justify-start items-center min-h-screen text-white m-8 mt-16
 }
 
 .auth-button {

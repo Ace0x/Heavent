@@ -10,10 +10,10 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [authError, setAuthError] = useState();
 
-  const URL = "http://localhost:8000/users/";
+  const URL = "http://localhost:8000/";
 
   const signup = (username, password) => {
-    fetch(URL, {
+    fetch(URL + "users/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
   };
 
   const login = (username, password) => {
-    fetch(URL + username + "/" + password, {
+    fetch(URL + "users/" + username + "/" + password, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,8 @@ export function AuthProvider({ children }) {
     signup,
     logout,
     login,
-    authError
+    authError,
+    URL
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
