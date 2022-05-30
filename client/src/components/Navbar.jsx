@@ -47,6 +47,15 @@ export default function Nav({ fixed }) {
           <span className="ml-2">User Data</span>
         </NavLink>
       </li>
+      <li className="nav-item">
+        <NavLink
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          to="/mylevels"
+        >
+          <AiOutlineUser className="text-lg leading-lg text-white opacity-75" />
+          <span className="ml-2">My Levels</span>
+        </NavLink>
+      </li>
       <li className="nav-item" onClick={() => logout()}>
         <NavLink
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
