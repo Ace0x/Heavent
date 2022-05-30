@@ -33,3 +33,9 @@ body {
 section {
   @apply flex flex-col justify-start items-center min-h-screen text-white m-8
 }
+
+.auth-button {
+  @apply border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl mx-2 my-4 hover:border-green-400 hover:text-green-400 
+}
+
+

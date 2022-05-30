@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TextInput from "./inputs/TextInput";
 import { useAuth } from "../context/authContext";
 import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -26,7 +27,7 @@ export default function Login() {
       <TextInput title="Username" setState={setUsername} type="text" />
       <TextInput title="Password" setState={setPassword} type="password" />
       <button
-        className="border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl m-2 hover:border-green-400 hover:text-green-400"
+        className="auth-button"
         onClick={() => onLoginClick()}
       >
         Log In
@@ -34,6 +35,7 @@ export default function Login() {
       {error && <p className="text-red-500 my-4">{error}</p>}
       {authError && <p className="text-red-500 my-4">{authError}</p>}
       {currentUser && <Navigate to="/"></Navigate>}
+      <p>Don't have an account? <Link to="/signup" className="text-blue-400">Sign Up</Link></p>
     </div>
   );
 }
