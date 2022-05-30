@@ -35,7 +35,7 @@ section {
 }
 
 .auth-button {
-  @apply border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl mx-2 my-4 hover:border-green-400 hover:text-green-400 
+  @apply border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl mx-2 my-4 hover:border-green-400 hover:text-green-400 transition-all duration-300
 }
 
 
