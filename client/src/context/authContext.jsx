@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [authError, setAuthError] = useState();
 
-  const URL = "http://api-heavent.herokuapp.com/";
+  const URL = "https://api-heavent.herokuapp.com/";
 
   const signup = (username, password) => {
     fetch(URL + "users/", {
