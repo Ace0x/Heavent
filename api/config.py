@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 # URL to connect to the database
 # change to where db is hosted
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:test123@localhost:3306/heavent"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:heavent1234@64.227.102.146:3306/heaventdb"
 
 # Create the engine
 engine = create_engine(
