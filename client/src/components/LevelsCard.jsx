@@ -17,6 +17,8 @@ export default function LevelsCard({ data }) {
     <div className="white-glassmorphism col-span-1 p-4 m-4 flex flex-col justify-start items-start">
       <h1 className="title-text text-2xl">{data.name}</h1>
       <p className="text-gray-100">Level ID: {data.id}</p>
+      <p className="text-gray-100">Total Deaths: {data.totalDeaths}</p>
+      <p className="text-gray-100">Likes: {data.likes}</p>
       <p className="text-gray-100">
         Level Data: {JSON.stringify(data.levelData)}
       </p>
