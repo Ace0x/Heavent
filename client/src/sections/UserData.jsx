@@ -17,6 +17,12 @@ export default function UserData() {
           <p>
             <strong>User ID: </strong> {currentUser.id}
           </p>
+          <p>
+            <strong>Played games: </strong> {currentUser.played}
+          </p>
+          <p>
+            <strong>Victories </strong> {currentUser.victory}
+          </p>
         </>
       ) : (
         <p>You are not logged in!</p>

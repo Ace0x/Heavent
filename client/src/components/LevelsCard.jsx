@@ -7,7 +7,7 @@ export default function LevelsCard({ data }) {
       <p className="text-gray-100">Level ID: {data.id}</p>
       <p className="text-gray-100">
         Level Data: {JSON.stringify(data.levelData)}
-      </p>
+      </p>        
     </div>
   );
 }
