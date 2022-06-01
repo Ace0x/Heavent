@@ -70,7 +70,7 @@ export default function Nav({ fixed }) {
 
   return (
     <>
-      <nav className="fixed flex flex-wrap items-center justify-between px-2 py-3 bg-black top-0 left-0 w-full">
+      <nav className="fixed flex flex-wrap items-center justify-between px-2 py-3 bg-black top-0 left-0 w-full z-50">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between text-[#ffffff]">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <NavLink
