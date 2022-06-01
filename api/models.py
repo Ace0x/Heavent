@@ -5,8 +5,6 @@ from sqlalchemy.orm import relationship
 from config import Base
 
 # User table
-
-
 class User(Base):
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, index=True)
@@ -19,8 +17,6 @@ class User(Base):
     levelstats = relationship("LevelStats", back_populates="user")
 
 # Level table
-
-
 class Level(Base):
     __tablename__ = "level"
     id = Column(Integer, primary_key=True, index=True)
@@ -38,8 +34,6 @@ class Level(Base):
     levelstats = relationship("LevelStats", back_populates="level")
 
 # Level stats table
-
-
 class LevelStats(Base):
     __tablename__ = "levelstats"
     id = Column(Integer, primary_key=True, index=True)

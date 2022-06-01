@@ -20,6 +20,7 @@ export default function LevelCreator() {
         body: JSON.stringify({
           userId: currentUser.id,
           name: levelName,
+          levelData: "{'diff': 10}"
         }),
       })
         .then((res) => res.json())
