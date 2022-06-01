@@ -17,10 +17,13 @@ export default function LevelCreator() {
     if (levelName && levelDifficulty && maxDeaths) {
       fetch(`${URL}levels`, {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           userId: currentUser.id,
           name: levelName,
-          levelData: "{'diff': 10}"
+          levelData: "{'diff': 10}",
         }),
       })
         .then((res) => res.json())
