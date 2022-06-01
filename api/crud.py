@@ -62,10 +62,8 @@ def update_user(db: Session, user_id: int, user: schemas.UserUpdate):
     return db_user
 
 def delete_user(db: Session, user_id: int):
-    db_user = db.query(models.User).filter(models.User.id == user_id).first()
-    db.delete(db_user)
+    db.query(models.User).filter(models.User.id == user_id).delete()
     db.commit()
-    return db_user
 
 """
 Level requests
