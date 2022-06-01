@@ -1,8 +1,10 @@
 import React from "react";
 import { useAuth } from "../context/authContext";
+import { Navigate } from "react-router-dom";
 
 export default function LevelsCard({ data }) {
   const { URL } = useAuth();
+  const [reload, setReload] = React.useState(false);
 
   const onDeleteClick = () => {
     fetch(URL + "levels/" + data.id, {
@@ -10,6 +12,7 @@ export default function LevelsCard({ data }) {
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
+      .then(setReload(true))
       .catch((error) => console.error(error));
   };
 
@@ -25,6 +28,7 @@ export default function LevelsCard({ data }) {
       <div className="delete-button" onClick={() => onDeleteClick()}>
         Delete
       </div>
+      {reload && <Navigate to="/levels"></Navigate>}
     </div>
   );
 }
