@@ -1,4 +1,5 @@
 
+from email.policy import default
 from sqlalchemy import Column, ForeignKey, Integer, String, Float, JSON
 from sqlalchemy.orm import relationship
 from config import Base
@@ -16,12 +17,13 @@ class User(Base):
     levelstats = relationship("LevelStats", back_populates="user")
 
 # Level table
-class Level(Base): 
+class Level(Base):
     __tablename__ = "level"
     id = Column(Integer, primary_key=True, index=True)
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     name = Column(String(50), nullable=False)
-    levelData = Column(JSON, nullable=False)
+    levelData = Column(JSON, default={"level": "", "enemies": [], "bosses": [
+    ], "victory": False, "deaths": 0, "likes": 0, "dislikes": 0})
     totalDeaths = Column(Integer, default=0)
     totalVictories = Column(Integer, default=0)
     totalEnemies = Column(Integer, default=0)
@@ -29,11 +31,12 @@ class Level(Base):
     likes = Column(Integer, default=0)
     dislikes = Column(Integer, default=0)
 
-
     user = relationship("User", back_populates="level")
     levelstats = relationship("LevelStats", back_populates="level")
 
 # Level stats table
+
+
 class LevelStats(Base):
     __tablename__ = "levelstats"
     id = Column(Integer, primary_key=True, index=True)

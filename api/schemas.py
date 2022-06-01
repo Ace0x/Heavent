@@ -26,7 +26,7 @@ class LevelCreate(BaseModel):
     id: Optional[int]
     userId: int
     name: str
-    levelData: dict
+    levelData: Optional[dict]
 
     class Config:
         orm_mode=True
