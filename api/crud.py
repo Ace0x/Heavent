@@ -94,6 +94,13 @@ def update_level(db: Session, level_id: int, level: schemas.LevelUpdate):
     db.commit()
     db.refresh(db_level)
     return db_level
+
+# Deletes everything related to a level
+def delete_level(db: Session, level_id: int):
+    db.query(models.LevelStats).filter(models.LevelStats.levelId == level_id).delete()
+    db.query(models.Level).filter(models.Level.id == level_id).delete()
+    db.commit()
+
 """
 Level stats requests
 """

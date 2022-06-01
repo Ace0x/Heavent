@@ -94,6 +94,10 @@ def create_level(level: schemas.LevelCreate, db: Session = Depends(get_db)):
 def update_level(level_id: int, level: schemas.LevelUpdate, db: Session = Depends(get_db)):
     return crud.update_level(db=db, level_id=level_id, level=level)
 
+@app.delete("/levels/{level_id}")
+def delete_level(level_id: int, db: Session = Depends(get_db)):
+    return crud.delete_level(db=db, level_id=level_id)
+
 """
 Level stats requests
 """
