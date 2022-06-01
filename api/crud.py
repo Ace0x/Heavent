@@ -53,12 +53,19 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.refresh(db_user)
     return db_user
 
+def update_user(db: Session, user_id: int, user: schemas.UserUpdate):
+    db_user = db.query(models.User).filter(models.User.id == user_id).first()
+    db_user.victory = user.victory
+    db_user.played = user.played
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
 def delete_user(db: Session, user_id: int):
     db_user = db.query(models.User).filter(models.User.id == user_id).first()
     db.delete(db_user)
     db.commit()
     return db_user
-
 
 """
 Level requests
@@ -76,6 +83,17 @@ def create_level(db: Session, level: schemas.LevelCreate):
     db.refresh(db_level)
     return db_level
 
+def update_level(db: Session, level_id: int, level: schemas.LevelUpdate):
+    db_level = db.query(models.Level).filter(models.Level.id == level_id).first()
+    db_level.totalDeaths = level.totalDeaths
+    db_level.totalVictories = level.totalVictories
+    db_level.totalEnemies = level.totalEnemies
+    db_level.totalBosses = level.totalBosses
+    db_level.likes = level.likes
+    db_level.dislikes = level.dislikes
+    db.commit()
+    db.refresh(db_level)
+    return db_level
 """
 Level stats requests
 """
@@ -89,26 +107,3 @@ def create_level_stats(db: Session, level_stats: schemas.LevelStatsCreate):
     db.refresh(db_level_stats)
     return db_level_stats
 
-"""
-User stats requests
-"""
-def get_all_users_stats(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.UserStats).offset(skip).limit(limit).all()
-
-def get_user_stats(db: Session, user_id: int):
-    return db.query(models.UserStats).filter(models.UserStats.userId == user_id).first()
-
-def create_user_stats(db: Session, user_stats: schemas.UserStatsCreate):
-    db_user_stats = models.UserStats(**user_stats.dict())
-    db.add(db_user_stats)
-    db.commit()
-    db.refresh(db_user_stats)
-    return db_user_stats
-
-def update_user_stats(db: Session, user_stats: schemas.UserStatsUpdate, user_id: int):
-    db_user_stats = db.query(models.UserStats).filter(models.UserStats.userId == user_id).first()
-    db_user_stats.played = user_stats.played
-    db_user_stats.victory = user_stats.victory
-    db.commit()
-    db.refresh(db_user_stats)
-    return db_user_stats

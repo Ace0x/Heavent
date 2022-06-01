@@ -15,7 +15,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Reto Construccion de Software TC2005B",
     description="API para Heaven't",
-    version="0..1",
+    version="0.0.1",
 )
 
 # Dependency
@@ -67,6 +67,10 @@ def get_user_with_username_and_password(username: str, password: str, db: Sessio
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return crud.create_user(db=db, user=user)
 
+@app.put("/users/{user_id}")
+def update_user(user_id: int, user: schemas.UserUpdate, db: Session = Depends(get_db)):
+    return crud.update_user(db=db, user_id=user_id, user=user)
+
 @app.delete("/users/{user_id}")
 def delete_user(user_id: int, db: Session = Depends(get_db)):
     return crud.delete_user(db=db, user_id=user_id)
@@ -86,6 +90,10 @@ def get_user_levels(user_id: int, db: Session = Depends(get_db)):
 def create_level(level: schemas.LevelCreate, db: Session = Depends(get_db)):
     return crud.create_level(db=db, level=level)
 
+@app.put("/levels/{level_id}")
+def update_level(level_id: int, level: schemas.LevelUpdate, db: Session = Depends(get_db)):
+    return crud.update_level(db=db, level_id=level_id, level=level)
+
 """
 Level stats requests
 """
@@ -96,25 +104,6 @@ def get_all_user_level_stats(user_id: int, level_id: int, db: Session = Depends(
 @app.post("/level_stats")
 def create_level_stats(level_stats: schemas.LevelStatsCreate, db: Session = Depends(get_db)):
     return crud.create_level_stats(db=db, level_stats=level_stats)
-
-"""
-User stats requests
-"""
-@app.get("/user_stats")
-def get_all_users_stats(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    return crud.get_all_users_stats(db, skip=skip, limit=limit)
-
-@app.get("/user_stats/{user_id}")
-def get_user_stats(user_id: int, db: Session = Depends(get_db)):
-    return crud.get_user_stats(db=db, user_id=user_id)
-
-@app.post("/user_stats")
-def create_user_stats(user_stats: schemas.UserStatsCreate, db: Session = Depends(get_db)):
-    return crud.create_user_stats(db=db, user_stats=user_stats)
-
-@app.put("/user_stats/{user_id}")
-def update_user_stats(user_id: int, user_stats: schemas.UserStatsUpdate, db: Session = Depends(get_db)):
-    return crud.update_user_stats(db=db, user_id=user_id, user_stats=user_stats)
 
 
 

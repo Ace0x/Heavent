@@ -1,6 +1,5 @@
-from enum import unique
-from operator import index
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, JSON
+
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, JSON
 from sqlalchemy.orm import relationship
 from config import Base
 
@@ -10,10 +9,11 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), nullable=False)
     password = Column(String(50), nullable=False)
+    victory = Column(Integer, default=0)
+    played = Column(Integer, default=0)
 
     level = relationship("Level", back_populates="user")
     levelstats = relationship("LevelStats", back_populates="user")
-    userstats = relationship("UserStats", back_populates="user")
 
 # Level table
 class Level(Base): 
@@ -22,6 +22,13 @@ class Level(Base):
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     name = Column(String(50), nullable=False)
     levelData = Column(JSON, nullable=False)
+    totalDeaths = Column(Integer, default=0)
+    totalVictories = Column(Integer, default=0)
+    totalEnemies = Column(Integer, default=0)
+    totalBosses = Column(Float, default=0)
+    likes = Column(Integer, default=0)
+    dislikes = Column(Integer, default=0)
+
 
     user = relationship("User", back_populates="level")
     levelstats = relationship("LevelStats", back_populates="level")
@@ -34,16 +41,7 @@ class LevelStats(Base):
     levelId = Column(Integer, ForeignKey("level.id"), nullable=False)
     deaths = Column(Integer, nullable=False)
     time = Column(Float, nullable=False)
+    victories = Column(Integer, nullable=False)
 
     user = relationship("User", back_populates="levelstats")
     level = relationship("Level", back_populates="levelstats")
-
-# User stats table
-class UserStats(Base):
-    __tablename__ = "userstats"
-    id = Column(Integer, primary_key=True, index=True)
-    userId = Column(Integer, ForeignKey("user.id"), nullable=False)
-    played = Column(Integer, nullable=False)
-    victory = Column(Integer, nullable=False)
-
-    user = relationship("User", back_populates="userstats")
