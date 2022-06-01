@@ -5,6 +5,8 @@ from sqlalchemy.orm import relationship
 from config import Base
 
 # User table
+
+
 class User(Base):
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, index=True)
@@ -17,13 +19,14 @@ class User(Base):
     levelstats = relationship("LevelStats", back_populates="user")
 
 # Level table
+
+
 class Level(Base):
     __tablename__ = "level"
     id = Column(Integer, primary_key=True, index=True)
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     name = Column(String(50), nullable=False)
-    levelData = Column(JSON, default={"level": "", "enemies": [], "bosses": [
-    ], "victory": False, "deaths": 0, "likes": 0, "dislikes": 0})
+    levelData = Column(JSON, default={})
     totalDeaths = Column(Integer, default=0)
     totalVictories = Column(Integer, default=0)
     totalEnemies = Column(Integer, default=0)
