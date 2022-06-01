@@ -28,7 +28,7 @@ export default function LevelsCard({ data }) {
       <div className="delete-button" onClick={() => onDeleteClick()}>
         Delete
       </div>
-      {reload && <Navigate to="/levels"></Navigate>}
+      {reload && <Navigate to="/"></Navigate>}
     </div>
   );
 }
