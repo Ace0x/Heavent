@@ -26,7 +26,7 @@ class Level(Base):
     id = Column(Integer, primary_key=True, index=True)
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     name = Column(String(50), nullable=False)
-    levelData = Column(JSON, default={})
+    levelData = Column(String(255), default="{'noData': 0}")
     totalDeaths = Column(Integer, default=0)
     totalVictories = Column(Integer, default=0)
     totalEnemies = Column(Integer, default=0)
