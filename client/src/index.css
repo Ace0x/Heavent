@@ -37,6 +37,10 @@ section {
 .auth-button {
   @apply border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl mx-2 my-4 hover:border-green-400 hover:text-green-400 transition-all duration-300
 }
+.delete-button {
+  @apply border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-2xl mx-2 my-4 hover:border-red-600 hover:text-red-600 transition-all duration-300
+}
+
 
 .blue-glassmorphism {
   background: rgb(39, 51, 89, 0.4);
