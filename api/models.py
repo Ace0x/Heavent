@@ -1,6 +1,7 @@
 
 from email.policy import default
 from sqlalchemy import Column, ForeignKey, Integer, String, Float
+from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import relationship
 from config import Base
 
@@ -22,7 +23,7 @@ class Level(Base):
     id = Column(Integer, primary_key=True, index=True)
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     name = Column(String(50), nullable=False)
-    levelData = Column(String(16000000), default="{'noData': 0}")
+    levelData = Column(LONGTEXT, default="{'noData': 0}")
     totalDeaths = Column(Integer, default=0)
     totalVictories = Column(Integer, default=0)
     totalEnemies = Column(Integer, default=0)
