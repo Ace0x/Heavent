@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 
 export default function LevelsCard({ data, isOwner = false }) {
-  const { URL, currentUser } = useAuth();
+  const { URL } = useAuth();
   const [reload, setReload] = React.useState(false);
   const [likes, setLikes] = React.useState(data.likes);
   const [toStats, setToStats] = React.useState("");
@@ -33,7 +33,7 @@ export default function LevelsCard({ data, isOwner = false }) {
   };
 
   const onStatsClick = () => {
-    setToStats("/levelstats/" + data.id + "/" + currentUser.id);
+    setToStats("/levelstats/" + data.id);
   };
 
   return (

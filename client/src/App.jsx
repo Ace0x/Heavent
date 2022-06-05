@@ -33,7 +33,7 @@ function App() {
             <Route path="/mylevels" element={<Levels />} />
             <Route path="/createlevel" element={<CreateLevel />} />
             <Route path="/alllevels" element={<AllLevels />} />
-            <Route path="/levelstats/:levelId/:userId" element={<LevelStats />} />
+            <Route path="/levelstats/:levelId" element={<LevelStats />} />
             <Route path="*" element={<h1>404</h1>} />
           </Routes>
         </Router>
