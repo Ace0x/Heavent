@@ -4,9 +4,10 @@ import { Navigate } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 
 export default function LevelsCard({ data, isOwner = false }) {
-  const { URL } = useAuth();
+  const { URL, currentUser } = useAuth();
   const [reload, setReload] = React.useState(false);
   const [likes, setLikes] = React.useState(data.likes);
+  const [toStats, setToStats] = React.useState("");
 
   const onDeleteClick = () => {
     fetch(URL + "levels/" + data.id, {
@@ -31,6 +32,10 @@ export default function LevelsCard({ data, isOwner = false }) {
       .catch((error) => console.error(error));
   };
 
+  const onStatsClick = () => {
+    setToStats("/levelstats/" + data.id + "/" + currentUser.id);
+  };
+
   return (
     <div className="white-glassmorphism col-span-1 p-4 m-4 flex flex-col justify-start items-start">
       <h1 className="title-text text-2xl">{data.name}</h1>
@@ -45,12 +50,17 @@ export default function LevelsCard({ data, isOwner = false }) {
         <p className="text-gray-100 px-2">{likes}</p>
       </div>
 
-      {isOwner && (
+      {isOwner ? (
         <div className="delete-button" onClick={() => onDeleteClick()}>
           Delete
         </div>
+      ) : (
+        <div className="auth-button" onClick={() => onStatsClick()}>
+          My Stats
+        </div>
       )}
       {reload && <Navigate to="/"></Navigate>}
+      {toStats && <Navigate to={toStats}></Navigate>}
     </div>
   );
 }

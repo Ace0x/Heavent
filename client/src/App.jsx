@@ -5,6 +5,7 @@ import Auth from "./sections/Auth";
 import CreateLevel from "./sections/CreateLevel";
 import Levels from "./sections/Levels";
 import AllLevels from "./sections/AllLevels";
+import LevelStats from "./sections/LevelStats";
 import { AuthProvider } from "./context/authContext";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserData from "./sections/UserData";
@@ -32,6 +33,7 @@ function App() {
             <Route path="/mylevels" element={<Levels />} />
             <Route path="/createlevel" element={<CreateLevel />} />
             <Route path="/alllevels" element={<AllLevels />} />
+            <Route path="/levelstats/:levelId/:userId" element={<LevelStats />} />
             <Route path="*" element={<h1>404</h1>} />
           </Routes>
         </Router>
