@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
 export default function LevelStats() {
-  let { levelId } = useParams();
+  let { levelId, name } = useParams();
   const { currentUser, URL } = useAuth();
-  const [levelStats, setLevelStats] = React.useState({});
+  const [levelStats, setLevelStats] = React.useState([]);
   const [statsFetched, setStatsFetched] = React.useState(true);
   const [error, setError] = React.useState(false);
 
@@ -29,7 +29,7 @@ export default function LevelStats() {
       <h1 className="title-text text-4xl">Level Stats</h1>
       {levelStats ? (
         <div>
-          <p>Level ID: {levelStats.id}</p>
+          <p>Level ID: {}</p>
         </div>
       ) : (
         <p>Loading...</p>

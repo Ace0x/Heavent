@@ -33,7 +33,7 @@ export default function LevelsCard({ data, isOwner = false }) {
   };
 
   const onStatsClick = () => {
-    setToStats("/levelstats/" + data.id);
+    setToStats("/levelstats/" + data.id + "/" + data.name);
   };
 
   return (
