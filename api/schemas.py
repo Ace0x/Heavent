@@ -56,3 +56,11 @@ class LevelStatsCreate(BaseModel):
     class Config:
         orm_mode=True
 
+class LevelStatsUpdate(BaseModel):
+    deaths: Optional[int]
+    time: Optional[int]
+    victories: Optional[int]
+
+    class Config:
+        orm_mode=True
+

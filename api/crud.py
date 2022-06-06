@@ -105,8 +105,8 @@ def delete_level(db: Session, level_id: int):
 """
 Level stats requests
 """
-def get_all_user_level_stats(db: Session, user_id: int, level_id: int):
-    return db.query(models.LevelStats).filter(models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).all()
+def get_user_level_stats(db: Session, user_id: int, level_id: int):
+    return db.query(models.LevelStats).filter(models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).first()
 
 def create_level_stats(db: Session, level_stats: schemas.LevelStatsCreate):
     db_level_stats = models.LevelStats(**level_stats.dict())
@@ -115,3 +115,11 @@ def create_level_stats(db: Session, level_stats: schemas.LevelStatsCreate):
     db.refresh(db_level_stats)
     return db_level_stats
 
+def update_level_stats_with_user_level(db: Session, user_id: int, level_id: int, level_stats: schemas.LevelStatsUpdate):
+    db_level_stats = db.query(models.LevelStats).filter(models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).first()
+    db_level_stats.deaths = level_stats.deaths
+    db_level_stats.victories = level_stats.victories
+    db_level_stats.time = level_stats.time
+    db.commit()
+    db.refresh(db_level_stats)
+    return db_level_stats

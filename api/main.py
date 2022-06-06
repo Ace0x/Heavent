@@ -106,12 +106,16 @@ def delete_level(level_id: int, db: Session = Depends(get_db)):
 Level stats requests
 """
 @app.get("/level_stats/{user_id}/{level_id}")
-def get_all_user_level_stats(user_id: int, level_id: int, db: Session = Depends(get_db)):
-    return crud.get_all_user_level_stats(db=db, user_id=user_id, level_id=level_id)
+def get_user_level_stats(user_id: int, level_id: int, db: Session = Depends(get_db)):
+    return crud.get_user_level_stats(db=db, user_id=user_id, level_id=level_id)
 
 @app.post("/level_stats")
 def create_level_stats(level_stats: schemas.LevelStatsCreate, db: Session = Depends(get_db)):
     return crud.create_level_stats(db=db, level_stats=level_stats)
+
+@app.put("/level_stats/{user_id}/{level_id}")
+def update_level_stats_with_user_level(user_id: int, level_id: int, level_stats: schemas.LevelStatsUpdate, db: Session = Depends(get_db)):
+    return crud.update_level_stats_with_user_level(db=db, user_id=user_id, level_id=level_id, level_stats=level_stats)
 
 
 
