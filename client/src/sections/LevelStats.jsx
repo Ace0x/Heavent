@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import StatsCard from "../components/StatsCard";
 import { useAuth } from "../context/authContext";
 
 export default function LevelStats() {
@@ -29,7 +30,7 @@ export default function LevelStats() {
       <h1 className="title-text text-4xl">Level Stats</h1>
       {levelStats ? (
         <div>
-          <p>Level ID: {}</p>
+          <StatsCard data={levelStats} name={name} />
         </div>
       ) : (
         <p>Loading...</p>
