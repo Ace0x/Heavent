@@ -64,3 +64,16 @@ class LevelStatsUpdate(BaseModel):
     class Config:
         orm_mode=True
 
+class LevelStatsDeathUpdate(BaseModel):
+    deaths: Optional[int]
+
+    class Config:
+        orm_mode=True
+    
+class LevelStatsTimeVictoryUpdate(BaseModel):
+    time: Optional[int]
+    victories: Optional[int]
+
+    class Config:
+        orm_mode=True
+

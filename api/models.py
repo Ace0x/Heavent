@@ -40,9 +40,9 @@ class LevelStats(Base):
     id = Column(Integer, primary_key=True, index=True)
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     levelId = Column(Integer, ForeignKey("level.id"), nullable=False)
-    deaths = Column(Integer, nullable=False)
-    time = Column(Float, nullable=False)
-    victories = Column(Integer, nullable=False)
+    deaths = Column(Integer, nullable=True)
+    time = Column(Float, nullable=True)
+    victories = Column(Integer, nullable=True)
 
     user = relationship("User", back_populates="levelstats")
     level = relationship("Level", back_populates="levelstats")

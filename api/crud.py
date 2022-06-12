@@ -123,3 +123,18 @@ def update_level_stats_with_user_level(db: Session, user_id: int, level_id: int,
     db.commit()
     db.refresh(db_level_stats)
     return db_level_stats
+
+def update_deaths_with_user_level(db: Session, user_id: int, level_id: int, deaths: int):
+    db_level_stats = db.query(models.LevelStats).filter(models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).first()
+    db_level_stats.deaths = deaths
+    db.commit()
+    db.refresh(db_level_stats)
+    return db_level_stats
+
+def update_victories_and_time_with_user_level(db: Session, user_id: int, level_id: int, victories: int, time: int):
+    db_level_stats = db.query(models.LevelStats).filter(models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).first()
+    db_level_stats.victories = victories
+    db_level_stats.time = time
+    db.commit()
+    db.refresh(db_level_stats)
+    return db_level_stats
