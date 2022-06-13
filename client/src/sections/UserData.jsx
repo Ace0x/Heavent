@@ -1,4 +1,5 @@
 import React from "react";
+import UserCompare from "../components/UserCompare";
 import { useAuth } from "../context/authContext";
 
 export default function UserData() {
@@ -8,7 +9,6 @@ export default function UserData() {
     <section>
       {currentUser ? (
         <>
-          <h1 className="title-text text-4xl">User Data</h1>
           <br />
 
           <p>
@@ -23,6 +23,7 @@ export default function UserData() {
           <p>
             <strong>Victories </strong> {currentUser.victory}
           </p>
+          <UserCompare user1={currentUser.id} />
         </>
       ) : (
         <p>You are not logged in!</p>
