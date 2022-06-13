@@ -1,6 +1,6 @@
 USE heaventdb;
 DELIMITER //
-CREATE PROCEDURE compare_levelstats(IN levelId1 int, IN userId1 int, IN userId2 int )
+CREATE PROCEDURE compare_levelstats(IN levelId int, IN userId1 int, IN userId2 int )
 BEGIN
 	SELECT 
 		userId, deaths, time, victories 
