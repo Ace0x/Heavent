@@ -1,7 +1,7 @@
 USE heaventdb;
 DELIMITER //
 CREATE VIEW most_winning_players AS
-	SELECT *
+	SELECT username, id, victory
 	FROM 
 		user
 	ORDER BY
