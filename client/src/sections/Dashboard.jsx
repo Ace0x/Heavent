@@ -1,12 +1,20 @@
 import React from "react";
 import BarChart from "../components/charts/BarChart";
 import { useAuth } from "../context/authContext";
+import DoughnutChart from "../components/charts/DoughnutChart";
+
+const randomHexGenerator = () => {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+};
 
 export default function Dashboard() {
   const { currentUser, URL } = useAuth();
   const [winningUsers, setWinningUsers] = React.useState([]);
   const [playingUsers, setPlayingUsers] = React.useState([]);
+  const [likesLevels, setLikesLevels] = React.useState([]);
   const [error, setError] = React.useState(false);
+
+  const colorList = [];
 
   React.useEffect(() => {
     fetch(`${URL}users/mostvictories/`, {
@@ -32,6 +40,17 @@ export default function Dashboard() {
         setPlayingUsers(data);
       })
       .catch((err) => setError(err));
+    fetch(`${URL}levels/mostliked/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLikesLevels(data);
+      })
+      .catch((err) => setError(err));
   }, []);
 
   return (
@@ -51,7 +70,7 @@ export default function Dashboard() {
                     borderColor: "rgba(0,0,0,1)",
                     borderWidth: 2,
                     data: winningUsers.map((user) => user.victory),
-                    color: "#fff"
+                    color: "#fff",
                   },
                 ],
               }}
@@ -59,7 +78,30 @@ export default function Dashboard() {
             />
           </div>
           <div className="col-span-1 p-4 m-4 white-glassmorphism">
-            <h2 className="title-text text-2xl">Col 1</h2>
+            <h2 className="title-text text-2xl">Best Levels</h2>
+            <DoughnutChart
+              chartData={{
+                labels: likesLevels.map((level) => level.name),
+                datasets: [
+                  {
+                    label: "Most Liked levels",
+                    data: likesLevels.map((level) => level.likes),
+                    backgroundColor: likesLevels.map((level) =>
+                      randomHexGenerator()
+                    ),
+                    hoverOffset: 4,
+                    color: "white",
+                  },
+                ],
+              }}
+              options={{
+                legend: {
+                  labels: {
+                    fontColor: "white", //set your desired color
+                  },
+                },
+              }}
+            />
           </div>
           <div className="col-span-1 p-4 m-4 white-glassmorphism">
             <h2 className="title-text text-2xl">Col 1</h2>
