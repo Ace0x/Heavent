@@ -1,12 +1,11 @@
 import React from "react";
 import DoughnutChart from "./charts/DoughnutChart";
-import LevelStatsCompare from "./compareInputs/LevelStatsCompare";
 
-export default function StatsCard({ data, name }) {
+export default function StatsCompareCard({ data }) {
 
   return (
-    <div className="white-glassmorphism p-4 m-4 flex flex-col justify-center items-center">
-      <h1 className="title-text text-2xl">{name}</h1>
+    <div className="white-glassmorphism p-4 m-4 flex flex-col justify-start items-start">
+      <h1 className="title-text text-2xl">{data.name}</h1>
       <p className="text-gray-100">Level ID: {data.levelId}</p>
       <p className="text-gray-100">Total clears: {data.victories}</p>
       <p className="text-gray-100">Total Deaths: {data.deaths}</p>
@@ -24,7 +23,6 @@ export default function StatsCard({ data, name }) {
           ],
         }}
       />
-      <LevelStatsCompare user1={data.userId} level={data.levelId} />
     </div>
   );
 }

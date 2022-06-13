@@ -15,5 +15,6 @@ export default function Header() {
         Play
       </div>
     </section>
+    
   );
 }

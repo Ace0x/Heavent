@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserData from "./sections/UserData";
 import CompareUsers from "./sections/CompareUsers";
 import CompareLevels from "./sections/CompareLevels";
+import CompareLevelStats from "./sections/CompareLevelStats";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="*" element={<h1>404</h1>} />
             <Route path="/compare/:user1/:user2" element={<CompareUsers />} />
             <Route path="/levels/compare/:level1/:level2" element={<CompareLevels />} />
+            <Route path="/levelstats/compare/:user1/:user2/:level" element={<CompareLevelStats />} />
           </Routes>
         </Router>
       </AuthProvider>

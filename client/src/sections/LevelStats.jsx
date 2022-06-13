@@ -33,7 +33,7 @@ export default function LevelStats() {
           <StatsCard data={levelStats} name={name} />
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>No stats available...</p>
       )}
     </section>
   );
