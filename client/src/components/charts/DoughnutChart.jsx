@@ -3,12 +3,12 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function DoughnutChart({ chartData }) {
+export default function DoughnutChart({ chartData, options = {} }) {
 
   return (
     <div>
       {" "}
-      <Doughnut data={chartData} />
+      <Doughnut data={chartData} options={options} />
     </div>
   );
 }
