@@ -38,7 +38,7 @@ export default function UserData() {
     <section>
       {currentUser ? (
         <>
-          <div>
+          <div className="flex flex-col justify-center items-center my-4">
             <h1 className="title-text text-4xl">User Data</h1>
             <br />
             <p>
@@ -62,15 +62,16 @@ export default function UserData() {
 
       {winningUsers && (
         <div className="flex flex-col justify-center items-center my-4">
-          <h1 className="title-text text-4xl">Users with most victories</h1>
+          <h1 className="title-text text-2xl">Users with most victories</h1>
           <div className="grid grid-cols-1 md:grid-cols-3">
             {winningUsers.map((user) => (
               <div
                 key={user.id}
                 className="white-glassmorphism p-4 m-4 flex flex-col justify-start items-start col-span-1"
               >
-                <h1 className="title-text text-2xl">{user.username}</h1>
+                <h1 className="title-text text-xl">{user.username}</h1>
                 <p className="text-gray-100">Username: {user.username}</p>
+                <p className="text-gray-100">User ID: {user.id}</p>
                 <p className="text-gray-100">Wins: {user.victory}</p>
               </div>
             ))}
@@ -79,15 +80,16 @@ export default function UserData() {
       )}
       {playingUsers && (
         <div className="flex flex-col justify-center items-center my-4">
-          <h1 className="title-text text-4xl">Users with most played games</h1>
+          <h1 className="title-text text-2xl">Users with most played games</h1>
           <div className="grid grid-cols-1 md:grid-cols-3">
             {playingUsers.map((user) => (
               <div
                 key={user.id}
                 className="white-glassmorphism p-4 m-4 flex flex-col justify-start items-start col-span-1"
               >
-                <h1 className="title-text text-2xl">{user.username}</h1>
+                <h1 className="title-text text-xl">{user.username}</h1>
                 <p className="text-gray-100">Username: {user.username}</p>
+                <p className="text-gray-100">User ID: {user.id}</p>
                 <p className="text-gray-100">Played: {user.played}</p>
               </div>
             ))}

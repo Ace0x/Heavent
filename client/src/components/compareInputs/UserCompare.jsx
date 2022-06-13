@@ -18,7 +18,7 @@ export default function UserCompare({ user1 }) {
   return (
     <div className="flex flex-row justify-center items-center">
       <TextInput title="User" setState={setUser2} type="number" />
-      <button className="auth-button" onClick={() => onCompareClick()}>
+      <button className="just-button" onClick={() => onCompareClick()}>
         Compare
       </button>
       {navigator && <Navigate to={`/comparelevels/${level1}/${level2}`}></Navigate>}
