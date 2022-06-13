@@ -150,20 +150,20 @@ def update_level_stats_with_user_level(db: Session, user_id: int, level_id: int,
     return db_level_stats
 
 
-def update_deaths_with_user_level(db: Session, user_id: int, level_id: int, deaths: int):
+def update_deaths_with_user_level(db: Session, user_id: int, level_id: int, level_stats: schemas.LevelStatsDeathUpdate):
     db_level_stats = db.query(models.LevelStats).filter(
         models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).first()
-    db_level_stats.deaths = deaths
+    db_level_stats.deaths = level_stats.deaths
     db.commit()
     db.refresh(db_level_stats)
     return db_level_stats
 
 
-def update_victories_and_time_with_user_level(db: Session, user_id: int, level_id: int, victories: int, time: int):
+def update_victories_and_time_with_user_level(db: Session, user_id: int, level_id: int, level_stats: schemas.LevelStatsTimeVictoryUpdate):
     db_level_stats = db.query(models.LevelStats).filter(
         models.LevelStats.userId == user_id, models.LevelStats.levelId == level_id).first()
-    db_level_stats.victories = victories
-    db_level_stats.time = time
+    db_level_stats.victories = level_stats.victories
+    db_level_stats.time = level_stats.time
     db.commit()
     db.refresh(db_level_stats)
     return db_level_stats

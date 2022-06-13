@@ -117,13 +117,13 @@ def create_level_stats(level_stats: schemas.LevelStatsCreate, db: Session = Depe
 def update_level_stats_with_user_level(user_id: int, level_id: int, level_stats: schemas.LevelStatsUpdate, db: Session = Depends(get_db)):
     return crud.update_level_stats_with_user_level(db=db, user_id=user_id, level_id=level_id, level_stats=level_stats)
 
-@app.put("/level_stats/{user_id}/{level_id}/{deaths}")
-def update_level_stats_with_user_level_deaths(user_id: int, level_id: int, deaths: int, db: Session = Depends(get_db)):
-    return crud.update_deaths_with_user_level(db=db, user_id=user_id, level_id=level_id, deaths=deaths)
+@app.put("/level_stats/deaths/{user_id}/{level_id}")
+def update_death_level_stats(user_id: int, level_id: int, level_stats: schemas.LevelStatsDeathUpdate, db: Session = Depends(get_db)):
+    return crud.update_deaths_with_user_level(db=db, user_id=user_id, level_id=level_id, level_stats=level_stats)
 
-@app.put("/level_stats/{user_id}/{level_id}/{time}/{victories}")
-def update_level_stats_with_user_level_time(user_id: int, level_id: int, time: int, victories: int, db: Session = Depends(get_db)):
-    return crud.update_victories_and_time_with_user_level(db=db, user_id=user_id, level_id=level_id, time=time, victories=victories)
+@app.put("/level_stats/wins/{user_id}/{level_id}")
+def update_win_level_stats(user_id: int, level_id: int, level_stats: schemas.LevelStatsTimeVictoryUpdate, db: Session = Depends(get_db)):
+    return crud.update_victories_and_time_with_user_level(db=db, user_id=user_id, level_id=level_id, level_stats=level_stats)
 
 """
 Get data from views
