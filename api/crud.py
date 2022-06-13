@@ -172,14 +172,14 @@ def update_victories_and_time_with_user_level(db: Session, user_id: int, level_i
 """
 Requests from views
 """
-def get_most_playing_users(db: Session):
-    return db.execute("SELECT * FROM heaventdb.most_played_players;").all()
+def get_most_playing_users(db: Session, skip: int = 0, limit: int = 3):
+    return db.execute(f"SELECT * FROM heaventdb.most_played_players LIMIT {limit};").all()
 
-def get_most_winning_users(db: Session):
-    return db.execute("SELECT * FROM heaventdb.most_winning_players;").all()
+def get_most_winning_users(db: Session, skip: int = 0, limit: int = 3):
+    return db.execute(f"SELECT * FROM heaventdb.most_winning_players LIMIT {limit};").all()
 
-def get_most_liked_levels(db: Session):
-    return db.execute("SELECT * FROM heaventdb.most_liked_levels;").all()
+def get_most_liked_levels(db: Session, skip: int = 0, limit: int = 3):
+    return db.execute(f"SELECT * FROM heaventdb.most_liked_levels LIMIT {limit};").all()
 
 """
 Requests from stored procedures
