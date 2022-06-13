@@ -62,6 +62,7 @@ export default function CompareLevelStats() {
                       circumference: 180,
                     }}
                   />
+                  <h2 className="title-text text-xl">Cleared</h2>
                   <DoughnutChart
                     chartData={{
                       labels: [levelstats[0].userId, levelstats[1].userId],
