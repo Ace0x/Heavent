@@ -64,7 +64,7 @@ export default function CompareLevelStats() {
                     datasets: [
                       {
                         label: "Victories",
-                        data: [levels[0].victories, levels[1].victories],
+                        data: [levelstats[0].victories, levelstats[1].victories],
                         backgroundColor: ["rgb(5, 99, 255)", "rgb(255, 99, 5)"],
                         hoverOffset: 4,
                       },

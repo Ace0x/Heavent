@@ -1,11 +1,11 @@
 USE heaventdb;
 delimiter //
-CREATE TRIGGER update_victory_and_deaths AFTER UPDATE ON levelstats
+CREATE TRIGGER update_victory_and_death AFTER UPDATE ON levelstats
 FOR EACH ROW
 	UPDATE levelstats 
 	SET 
-		deaths = deaths + NEW.deaths,
-        victories = victories + NEW.victories
+		deaths = OLD.deaths + NEW.deaths,
+		victories = OLD.victories + NEW.victories
 	WHERE 
-		id = OLD.id
+		id = NEW.userId
 //
