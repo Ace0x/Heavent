@@ -5,6 +5,7 @@ import {
   AiOutlineLogout,
   AiOutlineUserAdd,
   AiOutlineUser,
+  AiOutlineDashboard,
 } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
@@ -15,6 +16,15 @@ export default function Nav({ fixed }) {
 
   const UserNotSet = () => (
     <>
+      <li className="nav-item">
+        <NavLink
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          to="/dashboard"
+        >
+          <AiOutlineDashboard className="text-lg leading-lg text-white opacity-75" />
+          <span className="ml-2">Dashboad</span>
+        </NavLink>
+      </li>
       <li className="nav-item">
         <NavLink
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
@@ -38,6 +48,15 @@ export default function Nav({ fixed }) {
 
   const UserSet = () => (
     <>
+    <li className="nav-item">
+        <NavLink
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          to="/dashboard"
+        >
+          <AiOutlineDashboard className="text-lg leading-lg text-white opacity-75" />
+          <span className="ml-2">Dashboad</span>
+        </NavLink>
+      </li>
       <li className="nav-item">
         <NavLink
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
