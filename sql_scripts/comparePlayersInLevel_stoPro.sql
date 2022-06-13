@@ -1,12 +1,13 @@
 USE heaventdb;
+drop procedure compare_levelstats;
 DELIMITER //
-CREATE PROCEDURE compare_levelstats(IN levelId int, IN userId1 int, IN userId2 int )
+CREATE PROCEDURE compare_levelstats(IN id int, IN userId1 int, IN userId2 int)
 BEGIN
 	SELECT 
-		userId, deaths, time, victories, levelId 
+		*
     FROM 
 		levelstats 
     WHERE 
-		(userId = userId1 AND levelId = levelId) OR (userId = userId2 AND levelId = levelId);
+		levelId = id AND (userId = userId1 OR userId = userId2);
 END
 //

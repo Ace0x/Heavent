@@ -114,7 +114,6 @@ def update_level(db: Session, level_id: int, level: schemas.LevelUpdate):
 
 # Deletes everything related to a level
 
-
 def delete_level(db: Session, level_id: int):
     db.query(models.LevelStats).filter(
         models.LevelStats.levelId == level_id).delete()

@@ -16,8 +16,8 @@ export default function LevelStatsCompare({ user1, level }) {
   };
 
   return (
-    <div className="flex flex-row justify-center items-center">
-      <TextInput title="User" setState={setUser2} type="number" />
+    <div className="flex flex-col justify-center items-center">
+      <TextInput title="User" setState={setUser2} type="number" className="compare-input"/>
       <button className="just-button" onClick={() => onCompareClick()}>
         Compare
       </button>
