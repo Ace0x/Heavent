@@ -17,8 +17,16 @@ export default function UserCard({ data, name, forWhat }) {
               data: [data.played, data.victory],
               backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
               hoverOffset: 4,
+              color: "white"
             },
           ],
+        }}
+        options={{
+          legend: {
+            labels: {
+              fontColor: "white", //set your desired color
+            },
+          },
         }}
       />
     </div>

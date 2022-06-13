@@ -3,7 +3,6 @@ import DoughnutChart from "./charts/DoughnutChart";
 import LevelStatsCompare from "./compareInputs/LevelStatsCompare";
 
 export default function StatsCard({ data, name }) {
-
   return (
     <div className="white-glassmorphism p-4 m-4 flex flex-col justify-center items-center">
       <h1 className="title-text text-2xl">{name}</h1>
@@ -22,6 +21,13 @@ export default function StatsCard({ data, name }) {
               hoverOffset: 4,
             },
           ],
+        }}
+        options={{
+          legend: {
+            labels: {
+              fontColor: "white", //set your desired color
+            },
+          },
         }}
       />
       <LevelStatsCompare user1={data.userId} level={data.levelId} />

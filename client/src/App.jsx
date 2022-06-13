@@ -12,6 +12,7 @@ import UserData from "./sections/UserData";
 import CompareUsers from "./sections/CompareUsers";
 import CompareLevels from "./sections/CompareLevels";
 import CompareLevelStats from "./sections/CompareLevelStats";
+import Dashboard from "./sections/Dashboard";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/compare/:user1/:user2" element={<CompareUsers />} />
             <Route path="/levels/compare/:level1/:level2" element={<CompareLevels />} />
             <Route path="/levelstats/compare/:user1/:user2/:level" element={<CompareLevelStats />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Router>
       </AuthProvider>

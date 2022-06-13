@@ -2,7 +2,6 @@ import React from "react";
 import DoughnutChart from "./charts/DoughnutChart";
 
 export default function StatsCompareCard({ data }) {
-
   return (
     <div className="white-glassmorphism p-4 m-4 flex flex-col justify-start items-start">
       <p className="text-gray-100">Level ID: {data.levelId}</p>
@@ -20,6 +19,13 @@ export default function StatsCompareCard({ data }) {
               hoverOffset: 4,
             },
           ],
+        }}
+        options={{
+          legend: {
+            labels: {
+              fontColor: "white", //set your desired color
+            },
+          },
         }}
       />
     </div>
