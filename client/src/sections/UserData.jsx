@@ -1,5 +1,5 @@
 import React from "react";
-import UserCompare from "../components/UserCompare";
+import UserCompare from "../components/compareInputs/UserCompare";
 import { useAuth } from "../context/authContext";
 
 export default function UserData() {

@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "../context/authContext";
 import { Navigate } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
+import LevelCompare from "./compareInputs/LevelCompare";
 
 export default function LevelsCard({ data, isOwner = false }) {
   const { URL } = useAuth();
@@ -52,13 +53,14 @@ export default function LevelsCard({ data, isOwner = false }) {
 
       {isOwner ? (
         <div className="delete-button" onClick={() => onDeleteClick()}>
-          Delete
+          Delete 
         </div>
       ) : (
         <div className="auth-button" onClick={() => onStatsClick()}>
           My Stats
         </div>
       )}
+      <LevelCompare level1={data.id} />
       {reload && <Navigate to="/"></Navigate>}
       {toStats && <Navigate to={toStats}></Navigate>}
     </div>

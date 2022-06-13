@@ -4,7 +4,7 @@ import { useAuth } from "../context/authContext";
 import { useParams } from "react-router-dom";
 import DoughnutChart from "../components/charts/DoughnutChart";
 
-export default function Compare() {
+export default function CompareUsers() {
   let { user1, user2 } = useParams();
   const [fetched, setFetched] = React.useState(false);
   const [users, setUsers] = React.useState([]);
