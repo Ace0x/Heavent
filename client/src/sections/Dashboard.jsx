@@ -65,7 +65,7 @@ export default function Dashboard() {
                 labels: winningUsers.map((user) => user.username),
                 datasets: [
                   {
-                    label: "Most Winning Users",
+                    label: "Wins",
                     backgroundColor: "rgba(75,192,192,1)",
                     borderColor: "rgba(0,0,0,1)",
                     borderWidth: 2,

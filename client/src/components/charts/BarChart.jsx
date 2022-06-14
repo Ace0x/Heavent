@@ -22,14 +22,11 @@ export default function BarChart({ chartData, title }) {
             color: "white",
           },
           legend: {
-            display: true,
-            position: "right",
-            fontColor: "white",
             labels: {
-              color: "rgb(255, 255, 255)",
-              fontSize: 15,
-            },
-          },
+                fontColor: "blue",
+                fontSize: 18
+            }
+        },
           scales: {
             y: {
               ticks: { color: "white", beginAtZero: true },
