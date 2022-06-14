@@ -3,15 +3,22 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 export default function Game() {
   const { unityProvider } = useUnityContext({
-    loaderUrl: "/Build/Build.loader.js",
-    dataUrl: "/Build/Build.data.json",
-    frameworkUrl: "/Build/Build.framework.js",
-    codeUrl: "/Build/Build.wasm",
+    loaderUrl: "/build/Build.loader.js",
+    dataUrl: "/build/Build.data",
+    frameworkUrl: "/build/Build.framework.js",
+    codeUrl: "/build/Build.wasm",
   });
 
   return (
-    <div>
-      <Unity unityProvider={unityProvider} />
+    <div id="game" className="flex flex-col justify-center items-center min-h-screen">
+      <Unity
+        style={{
+          width: "100%",
+          justifySelf: "center",
+          alignSelf: "center",
+        }}
+        unityProvider={unityProvider}
+      />
     </div>
   );
 }
