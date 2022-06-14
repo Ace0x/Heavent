@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=800 height=600></canvas>
+      <canvas id="unity-canvas" width=1100 height=700></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -58,9 +58,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build.data.br",
-        frameworkUrl: buildUrl + "/Build.framework.js.br",
-        codeUrl: buildUrl + "/Build.wasm.br",
+        dataUrl: buildUrl + "/Build.data",
+        frameworkUrl: buildUrl + "/Build.framework.js",
+        codeUrl: buildUrl + "/Build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ElDiegoTEC",
         productName: "Heaven't",
@@ -95,8 +95,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "800px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1100px";
+        canvas.style.height = "700px";
       }
 
       loadingBar.style.display = "block";
