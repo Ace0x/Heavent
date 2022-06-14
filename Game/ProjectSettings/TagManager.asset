@@ -7,6 +7,9 @@ TagManager:
   - Fighter
   - Manager
   - Game
+  - Boss
+  - Spawn
+  - instance
   layers:
   - Default
   - TransparentFX
