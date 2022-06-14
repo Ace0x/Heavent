@@ -87,14 +87,16 @@ export default function Game() {
           ))}
         </div>
       </div>
-      <Unity
-        style={{
-          width: "90%",
-          justifySelf: "center",
-          alignSelf: "center",
-        }}
-        unityProvider={unityProvider}
-      />
+      <div className="flex flex-col justify-center items-center h-screen w-screen bg-black">
+        <Unity
+          style={{
+            width: "90%",
+            justifySelf: "center",
+            alignSelf: "center",
+          }}
+          unityProvider={unityProvider}
+        />
+      </div>
     </div>
   );
 }
