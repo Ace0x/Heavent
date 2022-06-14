@@ -7,7 +7,7 @@ import {
   AiOutlineUser,
   AiOutlineDashboard,
 } from "react-icons/ai";
-import { IoGameControllerOutline } from "react-icons/io";
+import { MdOutlineGames } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
@@ -31,7 +31,7 @@ export default function Nav({ fixed }) {
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
           to="/game"
         >
-          <IoGameControllerOutline className="text-lg leading-lg text-white opacity-75" />
+          <MdOutlineGames className="text-lg leading-lg text-white opacity-75" />
           <span className="ml-2">Game</span>
         </NavLink>
       </li>
@@ -72,7 +72,7 @@ export default function Nav({ fixed }) {
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
           to="/game"
         >
-          <IoGameControllerOutline className="text-lg leading-lg text-white opacity-75" />
+          <MdOutlineGames className="text-lg leading-lg text-white opacity-75" />
           <span className="ml-2">Game</span>
         </NavLink>
       </li>
