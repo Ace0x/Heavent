@@ -11,6 +11,9 @@ export default function Game() {
 
   return (
     <div id="game" className="flex flex-col justify-center items-center min-h-screen">
+      <div>
+        Reload when finished playing, instructions coming soon...
+      </div>
       <Unity
         style={{
           width: "100%",
