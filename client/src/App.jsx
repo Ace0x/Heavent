@@ -13,6 +13,7 @@ import CompareUsers from "./sections/CompareUsers";
 import CompareLevels from "./sections/CompareLevels";
 import CompareLevelStats from "./sections/CompareLevelStats";
 import Dashboard from "./sections/Dashboard";
+import Game from "./sections/Game";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <>
                   <Header />
                   <Info />
+                  <Game />
                 </>
               }
             />
