@@ -28,7 +28,6 @@ function App() {
                 <>
                   <Header />
                   <Info />
-                  <Game />
                 </>
               }
             />
@@ -44,6 +43,7 @@ function App() {
             <Route path="/levels/compare/:level1/:level2" element={<CompareLevels />} />
             <Route path="/levelstats/compare/:user1/:user2/:level" element={<CompareLevelStats />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/game" element={<Game />} />
           </Routes>
         </Router>
       </AuthProvider>

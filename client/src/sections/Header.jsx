@@ -11,11 +11,11 @@ export default function Header() {
       </h1>
       <p className="subtitle-text">Heaven doens't lie here</p>
       <br />
-      <a href="#game">
+      <Link to="/game">
         <div className="border-white border-4 hover:rounded-full rounded-lg bg-transparent subtitle-text px-8 text-4xl m-8">
           Play
         </div>
-      </a>
+      </Link>
     </section>
   );
 }
