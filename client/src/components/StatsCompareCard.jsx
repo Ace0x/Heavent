@@ -17,6 +17,7 @@ export default function StatsCompareCard({ data }) {
               data: [data.victories, data.deaths],
               backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
               hoverOffset: 4,
+              title: "Clear/Deaths ratio",
             },
           ],
         }}

@@ -60,6 +60,7 @@ export default function LevelsCard({ data, isOwner = false }) {
           My Stats
         </div>
       )}
+      <div className="w-full flex flex-col justify-center items-center"></div>
       <LevelCompare level1={data.id} />
       {reload && <Navigate to="/"></Navigate>}
       {toStats && <Navigate to={toStats}></Navigate>}

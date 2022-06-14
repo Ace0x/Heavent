@@ -17,7 +17,7 @@ export default function UserCompare({ user1 }) {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <TextInput title="User" setState={setUser2} type="number" />
+      <TextInput title="Compare with another user" setState={setUser2} type="number" />
       <button className="just-button" onClick={() => onCompareClick()}>
         Compare
       </button>

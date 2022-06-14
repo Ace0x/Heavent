@@ -17,7 +17,7 @@ export default function LevelCompare({ level1 }) {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <TextInput title="Level" setState={setLevel2} type="number" />
+      <TextInput title="Compare levels with ID" setState={setLevel2} type="number" />
       <button className="just-button" onClick={() => onCompareClick()}>
         Compare
       </button>
