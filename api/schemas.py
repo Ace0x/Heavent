@@ -27,6 +27,8 @@ class LevelCreate(BaseModel):
     userId: int
     name: str
     levelData: Optional[str]
+    totalEnemies: Optional[int]
+    totalBosses: Optional[int]
 
     class Config:
         orm_mode=True
