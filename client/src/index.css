@@ -27,11 +27,13 @@ body {
 }
 
 #info {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0))''
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  z-index: 50;
+  width: auto;
 }
 
 section {
-  @apply flex flex-col justify-start items-center min-h-screen text-white m-8 mt-16
+  @apply flex flex-col justify-start items-center min-h-screen text-white p-8 mt-16
 }
 
 .auth-button {
