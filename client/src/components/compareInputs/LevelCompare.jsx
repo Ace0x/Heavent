@@ -21,7 +21,7 @@ export default function LevelCompare({ level1 }) {
       <button className="just-button" onClick={() => onCompareClick()}>
         Compare
       </button>
-      {navigator && <Navigate to={`/level/compare/${level1}/${level2}`}></Navigate>}
+      {navigator && <Navigate to={`/levels/compare/${level1}/${level2}`}></Navigate>}
     </div>
   );
 }
