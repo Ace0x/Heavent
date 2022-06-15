@@ -9,7 +9,7 @@ export default function StatsCard({ data, name }) {
       <p className="text-gray-100">Level ID: {data.levelId}</p>
       <p className="text-gray-100">Total clears: {data.victories}</p>
       <p className="text-gray-100">Total Deaths: {data.deaths}</p>
-      <p className="text-gray-100">Best Time: {data.time}</p>
+      <p className="text-gray-100">Best Time: {data.time} seconds</p>
       <DoughnutChart
         chartData={{
           labels: ["Total Clears", "Total Deaths"],
