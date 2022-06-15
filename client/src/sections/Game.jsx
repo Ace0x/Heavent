@@ -90,7 +90,7 @@ export default function Game() {
       <div className="flex flex-col justify-center items-center h-screen w-screen bg-black">
         <Unity
           style={{
-            width: "90%",
+            width: "50%",
             justifySelf: "center",
             alignSelf: "center",
           }}
