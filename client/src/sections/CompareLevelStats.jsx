@@ -40,7 +40,7 @@ export default function CompareLevelStats() {
                 <StatsCompareCard data={lvl} />
               ))}
               <div className="flex flex-col col-span-1 md:col-span-2 white-glassmorphism p-4 m-4 justify-center items-center">
-                <h1 className="title-text text-xl">Playing numbers</h1>
+                <h1 className="title-text text-xl">Deaths in numbers</h1>
                 <div className="flex flex-col justify-center items-center">
                   <DoughnutChart
                     chartData={{
