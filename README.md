@@ -44,4 +44,6 @@ S/O to Prof. Octavio Navarro, Gilberto Echeverría, and Esteban Castillo for gui
 ### Project status
 The project has been concluded as part of the final coursework for TC2005B - Software Building and Decision Making.
 
+Check more about the workflow [here](/Documentation/MasterDocs%5BHeaven't%5D.pdf).
+
 ### [Video Link - Heaven't](https://youtu.be/K2YlWaCCg6U)
