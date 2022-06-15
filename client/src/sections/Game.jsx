@@ -96,6 +96,12 @@ export default function Game() {
           }}
           unityProvider={unityProvider}
         />
+        <a
+          href="https://heavent.netlify.app/"
+          className="decoration-none text-white"
+        >
+          <div className="just-button">Return to main</div>
+        </a>
       </div>
     </div>
   );
