@@ -4,6 +4,7 @@ import DoughnutChart from "./charts/DoughnutChart";
 export default function StatsCompareCard({ data }) {
   return (
     <div className="white-glassmorphism p-4 m-4 flex flex-col justify-start items-start">
+      <p className="text-gray-100">User ID: {data.levelId}</p>
       <p className="text-gray-100">Level ID: {data.levelId}</p>
       <p className="text-gray-100">Total clears: {data.victories}</p>
       <p className="text-gray-100">Total Deaths: {data.deaths}</p>
