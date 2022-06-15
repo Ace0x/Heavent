@@ -43,7 +43,6 @@ export default function LevelsCard({ data, isOwner = false }) {
       <p className="text-gray-100">Level ID: {data.id}</p>
       <p className="text-gray-100">Total clears: {data.totalVictories}</p>
       <p className="text-gray-100">Total Deaths: {data.totalDeaths}</p>
-      <p className="text-gray-100">Total enemies: {data.totalEnemies}</p>
       <div className="flex flex-row justify-center items-center">
         <button onClick={() => onLikeClick()}>
           <AiFillHeart className="text-red-500 text-xl hover:text-green-400 hover:animate-spin transition-colors" />
