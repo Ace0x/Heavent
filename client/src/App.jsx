@@ -14,6 +14,7 @@ import CompareLevels from "./sections/CompareLevels";
 import CompareLevelStats from "./sections/CompareLevelStats";
 import Dashboard from "./sections/Dashboard";
 import Game from "./sections/Game";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -38,13 +39,14 @@ function App() {
             <Route path="/createlevel" element={<CreateLevel />} />
             <Route path="/alllevels" element={<AllLevels />} />
             <Route path="/levelstats/:levelId/:name" element={<LevelStats />} />
-            <Route path="*" element={<h1>404</h1>} />
+            <Route path="*" element={<h1 className="text-white bg-black">404</h1>} />
             <Route path="/compare/:user1/:user2" element={<CompareUsers />} />
             <Route path="/levels/compare/:level1/:level2" element={<CompareLevels />} />
             <Route path="/levelstats/compare/:user1/:user2/:level" element={<CompareLevelStats />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/game" element={<Game />} />
           </Routes>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>

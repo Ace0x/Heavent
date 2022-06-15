@@ -103,15 +103,6 @@ export default function Dashboard() {
               }}
             />
           </div>
-          <div className="col-span-1 p-4 m-4 white-glassmorphism">
-            <h2 className="title-text text-2xl">Col 1</h2>
-          </div>
-          <div className="col-span-1 p-4 m-4 white-glassmorphism">
-            <h2 className="title-text text-2xl">Col 1</h2>
-          </div>
-          <div className="col-span-1 p-4 m-4 white-glassmorphism">
-            <h2 className="title-text text-2xl">Col 1</h2>
-          </div>
         </div>
       ) : (
         <p>Loading dashboard...</p>
