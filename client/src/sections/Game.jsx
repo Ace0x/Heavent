@@ -64,12 +64,20 @@ export default function Game() {
             kkey="B"
             inst="Toggle build modes (put tiles, gameobjects, players, enemies, etc.)"
           />
+          <KeyShow
+            kkey="Right ctrl/cmd"
+            inst="Exit builder"
+          />
           <h2 className="title-text text-xl text-center font-bold">
             Tileset mode
           </h2>
           <KeyShow
             kkey="Left mouse"
             inst="Click and drag to put tilesets in trajectory"
+          />
+          <KeyShow
+            kkey="Right mouse"
+            inst="Click and drag to delete tilesets in trajectory"
           />
           <KeyShow kkey="1" inst="Change to tile 1" />
           <KeyShow kkey="2" inst="Change to tile 2" />
