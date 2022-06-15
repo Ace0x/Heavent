@@ -1,5 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+==========================================
+ Title: Enemy
+ Authors: 
+ Andrew Dunkerley, 
+ Emiliano Cabrera, 
+ Diego Corrales, 
+ DO Hyun Nam
+ Date: 14/06/2022
+==========================================
+*/
+
 using UnityEngine;
 
 public class Enemy : Mover {
@@ -24,7 +34,6 @@ public class Enemy : Mover {
     public ContactFilter2D filter;
     private BoxCollider2D hitbox;
 
-    // This class cannot inherit from Collidable class, so we have to copy the logic
     // Array of things it is colliding with
     private Collider2D[] hits = new Collider2D[10];
 
