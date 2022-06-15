@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+
+[System.Serializable]
 public class User
 {
     public int id;
@@ -59,10 +61,5 @@ public class LoginMenu : MonoBehaviour
                 SceneManager.LoadScene("Login");
         else
             StartCoroutine(GetUser());
-    }
-
-    public void QuitGame() 
-    {
-        Application.Quit();
     }
 }

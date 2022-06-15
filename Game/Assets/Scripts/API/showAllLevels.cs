@@ -25,6 +25,13 @@ public class leveling
 {
     public List<Level> ls;
 }
+
+
+[System.Serializable]
+public class Users
+{
+    public List<User> u;
+}
 public class showAllLevels : MonoBehaviour
 {
     public List<Level> Levels;
@@ -34,6 +41,8 @@ public class showAllLevels : MonoBehaviour
     public GameObject levelEntryItem;
     public Transform scroll;
     public leveling lsx;
+    public Users users;
+    public User usuario;
 
     private void Start()
     {
@@ -46,11 +55,12 @@ public class showAllLevels : MonoBehaviour
         StartCoroutine(GetLevels());
     }
 
+
     public IEnumerator GetLevels()
     {
         using (UnityWebRequest www = UnityWebRequest.Get(constring))
         {
-            Levels = new List<Level>();
+            
             yield return www.SendWebRequest();
             if (www.result == UnityWebRequest.Result.Success)
             {
@@ -63,8 +73,30 @@ public class showAllLevels : MonoBehaviour
                 Debug.Log("Error: " + www.error);
             }
         }
-        GameObject.Find("Retain").gameObject.GetComponent<RetainOnLoad>().lvl = lsx.ls;
 
+        using (UnityWebRequest www = UnityWebRequest.Get($"https://api-heavent.herokuapp.com/users"))
+        {
+        
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success)
+            {
+                if (www.downloadHandler.text != "null")
+                {
+                    string raw = www.downloadHandler.text;
+                    string raw2 = "{ \"u\":" + raw + "}";
+                 
+                    users = JsonUtility.FromJson<Users>(raw2);
+                  
+                }
+            }
+            else
+            {
+                Debug.Log("Error: " + www.error);
+            }
+        }
+        GameObject.Find("Retain").gameObject.GetComponent<RetainOnLoad>().lvl = lsx.ls;
+        lsx.ls.Sort((x, y) => x.id.CompareTo(y.id));
         if (load)
             dislpayLevels(lsx.ls);
         load = false;
@@ -78,8 +110,17 @@ public class showAllLevels : MonoBehaviour
             displayItem.transform.SetParent(scroll);
             displayItem.GetComponent<entryData>().lvlName = levels[i].name;
             displayItem.GetComponent<entryData>().lvlID = levels[i].id.ToString();
-            displayItem.GetComponent<entryData>().lvlCreator = levels[i].userId.ToString();
+         
+            for(int j = 0; j < users.u.Count; j++)
+            {
+                if (users.u[j].id == levels[i].userId)
+                {
+                    displayItem.GetComponent<entryData>().lvlCreator = users.u[j].username;
+                    break;
+                }
+            }
             displayItem.GetComponent<entryData>().lvlData = levels[i].levelData;
+            usuario = null;
         }
     }
 
