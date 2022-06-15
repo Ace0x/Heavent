@@ -1,5 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+==========================================
+ Title: Player
+ Authors: 
+ Andrew Dunkerley, 
+ Emiliano Cabrera, 
+ Diego Corrales, 
+ DO Hyun Nam
+ Date: 14/06/2022
+==========================================
+*/
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : Mover 
@@ -146,13 +156,13 @@ public class Player : Mover
         
     }
 
-    // Update movement ecery frame according to input
+    // Update movement every frame according to input
     private void FixedUpdate() 
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        // Guardar los valores de x y y si se mueve el jugador
+        // Save x and y values
         if (x != 0 || y != 0) {
             currentX = x;
             currentY = y;

@@ -1,4 +1,14 @@
-using System.Collections;
+/*
+==========================================
+ Title: Game Manager
+ Authors: 
+ Andrew Dunkerley, 
+ Emiliano Cabrera, 
+ Diego Corrales, 
+ Do Hyun Nam
+ Date: 14/06/2022
+==========================================
+*/
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,13 +36,13 @@ public class GameManager : MonoBehaviour
         }
         
         // Delete all PlayerPrefs once game is started up so xp and gold is lost 
-        //  when starting again
+        // when starting again
         PlayerPrefs.DeleteAll();
 
 
         instance = this;
         // Once the scene is loaded, SceneManager will go through all functions and execute them,
-        //  so we add the LoadState function at the end
+        // so we add the LoadState function at the end
         SceneManager.sceneLoaded += LoadState;
     }
 
@@ -62,7 +72,7 @@ public class GameManager : MonoBehaviour
                 player = spawnPoint.transform.GetChild(0).gameObject.GetComponent<Player>();
             }
 
-        if (weapon == null && player != null && spawnPoint != null)
+        if (GameObject.Find("Weapon") != null && player != null && spawnPoint != null)
             weapon = GameObject.Find("Weapon").gameObject.GetComponent<Weapon>();
             
         if (si == null && GameObject.Find("Player") != null)
@@ -96,10 +106,10 @@ public class GameManager : MonoBehaviour
             ui = GameObject.Find("UI");
       
         if (hitpointBar == null && ui != null)
-            hitpointBar = ui.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<RectTransform>();
+            hitpointBar = GameObject.Find("Health").gameObject.GetComponent<RectTransform>();
 
         if (faithBar == null && ui != null)
-            faithBar = ui.transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<RectTransform>();
+            faithBar = GameObject.Find("Faith").gameObject.GetComponent<RectTransform>();
 
         if (floatingTextManager == null && GameObject.Find("FloatingTextManager") != null)
             floatingTextManager = GameObject.Find("FloatingTextManager").gameObject.GetComponent<FloatingTextManager>();
@@ -164,7 +174,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Function to call the Show form FloatinftextManager
-    //  This is included in Game Manager so it can be called from anywhere
+    // This is included in Game Manager so it can be called from anywhere
     public void ShowText(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration) 
     {
         floatingTextManager.Show(message, fontSize, color, position, motion, duration);

@@ -142,3 +142,4 @@ MonoBehaviour:
   spellPushForce: 5
   lastUse: 1
   faithCost: 2
+  inventory: {fileID: 0}

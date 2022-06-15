@@ -1,3 +1,14 @@
+/*
+==========================================
+ Title: Level Create
+ Authors: 
+ Andrew Dunkerley, 
+ Emiliano Cabrera, 
+ Diego Corrales, 
+ Do Hyun Nam
+ Date: 14/06/2022
+==========================================
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,14 +29,14 @@ public class levelCreate : MonoBehaviour {
             retain = GameObject.Find("Retain").GetComponent<RetainOnLoad>();
     }    
     
-    public void ActivateNaming()
+    public void ActivateNaming() //activate naming template
     {
         Level_Manager lvManager = GameObject.Find("LevelManager").gameObject.GetComponent<Level_Manager>();
         lvManager.Savelevel();
         Naming.SetActive(true);
     }
 
-    public void GetLevel()
+    public void GetLevel() // get level from level list
     {
         Level_Manager lvManager = GameObject.Find("LevelManager").gameObject.GetComponent<Level_Manager>();
         _levelDoc = lvManager.GetJson().Replace((char)34, (char)39).Replace("\n", "");
@@ -38,17 +49,17 @@ public class levelCreate : MonoBehaviour {
         Naming.SetActive(false);
     }
 
-    public void CloseTab()
+    public void CloseTab() 
     {
         Naming.SetActive(false);
     }
 
-    public void Login()
+    public void Login() 
     {
         StartCoroutine(Post());
     }
  
-    IEnumerator Post()
+    IEnumerator Post() //post levels to DB
     {
         var user = new UserLevel
         {
@@ -56,7 +67,10 @@ public class levelCreate : MonoBehaviour {
             name = _name.text,
             levelData = _levelDoc,
         };
- 
+        user.totalEnemies = user.totalBosses = user.levelData.Split("Boss").Length - 1;
+        user.totalEnemies += user.levelData.Split("SmallEnemy").Length - 1;
+        Debug.Log(user.totalEnemies);
+        Debug.Log(user.totalBosses);
         var body = JsonUtility.ToJson(user);
         Debug.Log(body);
         
@@ -70,6 +84,8 @@ public class levelCreate : MonoBehaviour {
         user = null;
 
     }
+
+    
 }
 
 public class UserLevel
@@ -77,4 +93,6 @@ public class UserLevel
     public string userId;
     public string name;
     public string levelData;
+    public int totalEnemies;
+    public int totalBosses;
 }
